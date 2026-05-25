@@ -84,7 +84,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
+                {/* <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
                     <MapPin className="h-6 w-6 text-purple-400" />
                   </div>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                     <p className="text-gray-400 text-sm">Location</p>
                     <p className="text-white">Kandivali East, Mumbai</p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 

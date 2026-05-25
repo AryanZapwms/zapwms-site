@@ -176,10 +176,10 @@ export default function AnimatedFooter() {
                   <Phone className="h-5 w-5 text-blue-500" />
                   <span>+91-8652071903 </span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-400 justify-center sm:justify-start">
+                {/* <div className="flex items-center space-x-3 text-gray-400 justify-center sm:justify-start">
                   <MapPin className="h-5 w-5 text-blue-500" />
                   <span>Kandivali East, Mumbai, Maharashtra, India</span>
-                </div>
+                </div> */}
               </div>
 
               <div className="mt-8">
