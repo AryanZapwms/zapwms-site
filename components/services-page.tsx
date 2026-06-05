@@ -355,7 +355,7 @@ export default function ServicesPage() {
         >
           <div className="inline-flex items-center px-5 py-2.5 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-sm text-gray-300 mb-8">
             <div className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2.5 animate-pulse" />
-            Full-Service Digital Agency · Est. 1999
+             Digital Service Agency · Est. 1999
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
