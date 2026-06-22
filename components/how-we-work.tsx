@@ -10,7 +10,7 @@ const steps = [
     description: "We uncover growth opportunities and define a clear roadmap for your success.",
     icon: <Search className="w-8 h-8" />,
     mockup: "discovery",
-    gradient: "from-indigo-50 to-blue-50",
+    gradient: "from-orange-100 via-red-50 to-rose-100",
     border: "border-indigo-100",
     glow: "hover:shadow-[0_8px_40px_rgba(99,102,241,0.2)]",
     iconColor: "text-indigo-500",
@@ -22,7 +22,7 @@ const steps = [
     description: "We build powerful solutions and continuously optimize for performance and results.",
     icon: <Lightbulb className="w-8 h-8" />,
     mockup: "development",
-    gradient: "from-purple-50 to-violet-50",
+    gradient: "from-purple-200 via-fuchsia-100 to-violet-200",
     border: "border-purple-100",
     glow: "hover:shadow-[0_8px_40px_rgba(168,85,247,0.2)]",
     iconColor: "text-purple-500",
@@ -34,7 +34,7 @@ const steps = [
     description: "We launch your product and scale it with data-driven strategies and ongoing support.",
     icon: <Rocket className="w-8 h-8" />,
     mockup: "launch",
-    gradient: "from-emerald-50 to-green-50",
+    gradient: "from-emerald-200 via-green-100 to-lime-100",
     border: "border-emerald-100",
     glow: "hover:shadow-[0_8px_40px_rgba(16,185,129,0.2)]",
     iconColor: "text-emerald-500",
@@ -48,7 +48,7 @@ export default function HowWeWork() {
       {/* Subtle grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.04)_1px,transparent_1px),linear-gradient(to_right,rgba(99,102,241,0.04)_1px,transparent_1px)] bg-[size:48px_48px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export default function HowWeWork() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-200 text-sm text-indigo-700 font-medium mb-6">
+          <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-indigo-50  border-indigo-200 text-sm text-indigo-700 font-medium mb-6">
             <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2.5 animate-pulse" />
             Our Process
           </div>
@@ -66,24 +66,31 @@ export default function HowWeWork() {
           </p>
         </motion.div>
 
-        <div className="relative">
-          <div className="hidden md:block absolute top-[38%] left-0 right-0 z-0">
-            <div className="max-w-5xl mx-auto h-[1px] bg-gradient-to-r from-indigo-300 via-purple-300 to-emerald-300 opacity-60" />
+        <div className="relative ">
+          <div className="hidden md:block absolute top-[38%] left-0 right-0 z-0 ">
+            <div className="max-w-5xl mx-auto h-[1px] bg-gradient-to-r from-indigo-300 via-purple-300 to-emerald-300 opacity-60 " />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
             {steps.map((step, index) => (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className={`bg-gradient-to-br ${step.gradient} border ${step.border} rounded-3xl p-8 transition-all duration-300 group ${step.glow} cursor-default`}
-              >
+             <motion.div
+  key={step.number}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: index * 0.2 }}
+  viewport={{ once: true }}
+  whileHover={{ y: -10, scale: 1.02 }}
+  className={`bg-gradient-to-br ${step.gradient}
+    border
+    rounded-3xl p-8
+    shadow-lg shadow-red-200/40
+    transition-all duration-300
+    group ${step.glow}
+    cursor-default
+    hover:shadow-xl hover:shadow-red-300/50`}
+>
                 {/* Mockup Area */}
-                <div className="aspect-video bg-white/70 rounded-2xl mb-6 overflow-hidden relative border border-white shadow-inner">
+                <div className="aspect-video bg-white/70 rounded-2xl mb-6 overflow-hidden relative border border-white shadow-inner ">
                   <div className="absolute inset-0 p-4">
                     {step.mockup === "discovery" && (
                       <motion.div
@@ -181,15 +188,15 @@ export default function HowWeWork() {
                   </div>
                 </div>
 
-                <div className="h-px w-full bg-gray-200 mb-4" />
+                <div className="h-px w-full bg-grey-500 mb-4 " />
 
-                <div className="space-y-4 mt-4">
-                  <div className="flex items-center space-x-4">
+                <div className="space-y-4 mt-4 ">
+                  <div className="flex items-center space-x-4 ">
                     <motion.div
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.2 }}
-                      className="text-4xl font-bold text-gray-200"
+                      className="text-4xl font-bold text-black"
                     >
                       {step.number}
                     </motion.div>

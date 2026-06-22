@@ -70,7 +70,7 @@ export default function InnovativeServices() {
 
         <div className="grid grid-cols-1 gap-8">
           {/* Top row - Paid Social and Google Ads */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
             {services.slice(0, 2).map((service, index) => (
               <motion.div
                 key={service.title}
@@ -81,7 +81,22 @@ export default function InnovativeServices() {
                 whileHover={{ y: -5 }}
                 onHoverStart={() => setHoveredIndex(index)}
                 onHoverEnd={() => setHoveredIndex(null)}
-                className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:border-indigo-200 hover:shadow-lg transition-all duration-300 group"
+                className="
+  bg-gradient-to-br
+  from-indigo-100
+  via-blue-50
+  to-purple-100
+  border border-indigo-200
+  rounded-2xl
+  p-8
+  shadow-lg
+  hover:border-indigo-400
+  hover:shadow-2xl
+  hover:shadow-indigo-200/50
+  transition-all
+  duration-300
+  group
+"
               >
                 <div className="aspect-video bg-gray-50 rounded-lg mb-6 overflow-hidden relative border border-gray-100">
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white p-4">
@@ -270,10 +285,10 @@ export default function InnovativeServices() {
 
                 <div className="flex flex-col justify-between h-auto">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-xl font-bold text-[#0f3380fff] mb-3 group-hover:text-[#5c6ca0] transition-colors ">
                       {service.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed text-sm">{service.description}</p>
+                    <p className="text-[#855f8f] leading-relaxed text-sm">{service.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -290,7 +305,23 @@ export default function InnovativeServices() {
                 transition={{ duration: 0.6, delay: (index + 2) * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:border-indigo-200 hover:shadow-lg transition-all duration-300 group"
+               className="
+  bg-gradient-to-br
+  from-purple-200
+  via-fuchsia-100
+  to-violet-200
+  border
+  border-purple-300
+  rounded-2xl
+  p-8
+  shadow-lg
+  hover:border-purple-500
+  hover:shadow-2xl
+  hover:shadow-purple-300/50
+  transition-all
+  duration-300
+  group
+"
               >
                 <div className="aspect-video bg-gray-50 rounded-lg mb-6 overflow-hidden relative border border-gray-100">
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white p-4">
@@ -422,10 +453,10 @@ export default function InnovativeServices() {
 
                 <div className="flex flex-col justify-between h-auto">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-xl font-bold text-[#761ac1] mb-3 group-hover:text-blue-400 transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed text-sm">{service.description}</p>
+                    <p className="text-[#8b81d4] leading-relaxed text-sm">{service.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -435,105 +466,143 @@ export default function InnovativeServices() {
           {/* Bottom row - Web Development (full width) */}
           {services.slice(5).map((service, index) => (
             <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:border-indigo-200 hover:shadow-lg transition-all duration-300 group"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="md:col-span-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-400 leading-relaxed text-sm mb-6">{service.description}</p>
+  key={service.title}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.5 }}
+  viewport={{ once: true }}
+  whileHover={{ y: -5 }}
+  className="
+    bg-gradient-to-br
+    from-indigo-100
+    via-white
+    to-purple-100
+    border border-indigo-200
+    rounded-2xl
+    p-8
+    shadow-lg
+    hover:border-indigo-400
+    hover:shadow-2xl
+    hover:shadow-indigo-200/40
+    transition-all
+    duration-300
+    group
+  "
+>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    {/* Trust Badges */}
-                    {service.badges && (
-                      <div className="flex flex-wrap gap-3 mb-6">
-                        {service.badges.map((badge, badgeIndex) => (
-                          <div
-                            key={badgeIndex}
-                            className="flex items-center space-x-2 bg-gray-800/50 px-3 py-2 rounded-lg border border-gray-700/50"
-                          >
-                            <div className="text-green-400">{badge.icon}</div>
-                            <span className="text-xs text-gray-600">{badge.text}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+    {/* LEFT CONTENT */}
+    <div className="md:col-span-1 flex flex-col justify-between">
+      <div>
+        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
+          {service.title}
+        </h3>
 
-                  <div className="flex justify-end items-center">
-                    <Link href="/services#web-development">
-                      <AnimatedButton className="bg-white text-black hover:bg-gray-100 px-6 py-2">
-                        <span className="flex items-center">Learn More</span>
-                      </AnimatedButton>
-                    </Link>
-                  </div>
+        <p className="text-gray-600 leading-relaxed text-sm mb-6">
+          {service.description}
+        </p>
+
+        {/* TRUST BADGES */}
+        {service.badges && (
+          <div className="flex flex-wrap gap-3 mb-6">
+            {service.badges.map((badge, badgeIndex) => (
+              <div
+                key={badgeIndex}
+                className="flex items-center space-x-2 bg-white/80 px-3 py-2 rounded-lg border border-indigo-100 shadow-sm"
+              >
+                <div className="text-green-500">{badge.icon}</div>
+                <span className="text-xs text-gray-700 font-medium">
+                  {badge.text}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* BUTTON */}
+      <div className="flex justify-end items-center">
+        <AnimatedButton className="bg-indigo-600 text-white hover:bg-indigo-700 px-6 py-2">
+          <span className="flex items-center">Learn More</span>
+        </AnimatedButton>
+      </div>
+    </div>
+
+    {/* RIGHT MOCKUP */}
+    <div className="md:col-span-2">
+      <div className="aspect-[16/9] bg-white rounded-lg overflow-hidden relative border border-indigo-200 shadow-md">
+
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 p-4">
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="w-full h-full"
+          >
+
+            {/* BROWSER CHROME */}
+            <div className="bg-indigo-100 rounded-t-lg p-2 mb-2">
+              <div className="flex items-center space-x-2">
+                <div className="flex space-x-1">
+                  <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                 </div>
 
-                <div className="md:col-span-2">
-                  <div className="aspect-[16/9] bg-gray-900 rounded-lg overflow-hidden relative border border-gray-800">
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white p-4">
-                      {/* Web Development Mockup */}
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.3 }}
-                        className="w-full h-full"
-                      >
-                        {/* Browser Chrome */}
-                        <div className="bg-gray-200 rounded-t-lg p-2 mb-2">
-                          <div className="flex items-center space-x-2">
-                            <div className="flex space-x-1">
-                              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                            </div>
-                            <div className="bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded flex-1 text-center">
-                              www.motionmedia.com
-                            </div>
-                          </div>
-                        </div>
-                        {/* Website Content */}
-                        <div className="bg-gray-800 rounded-b-lg p-3 h-[calc(100%-36px)] grid grid-cols-3 gap-3">
-                          <div className="col-span-3 flex justify-between items-center mb-2">
-                            <motion.div
-                              animate={{ width: ["60px", "80px", "60px"] }}
-                              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-                              className="bg-gray-200 h-4 rounded"
-                            ></motion.div>
-                            <div className="flex space-x-2">
-                              <div className="bg-gray-200 h-3 w-12 rounded"></div>
-                              <div className="bg-gray-200 h-3 w-12 rounded"></div>
-                              <div className="bg-gray-200 h-3 w-12 rounded"></div>
-                            </div>
-                          </div>
-                          <motion.div
-                            animate={{ opacity: [0.7, 1, 0.7] }}
-                            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                            className="col-span-3 h-20 bg-gray-200 rounded mb-3"
-                          ></motion.div>
-                          <div className="bg-gray-200 h-24 rounded"></div>
-                          <div className="bg-gray-200 h-24 rounded"></div>
-                          <div className="bg-gray-200 h-24 rounded"></div>
-                          <div className="col-span-3 grid grid-cols-4 gap-2">
-                            <div className="bg-gray-200 h-8 rounded"></div>
-                            <div className="bg-gray-200 h-8 rounded"></div>
-                            <div className="bg-gray-200 h-8 rounded"></div>
-                            <div className="bg-gray-200 h-8 rounded"></div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    </div>
-                  </div>
+                <div className="bg-white text-gray-500 text-xs px-2 py-1 rounded flex-1 text-center border border-indigo-100">
+                  www.zapsolutionz.com
                 </div>
               </div>
-            </motion.div>
+            </div>
+
+            {/* WEBSITE CONTENT */}
+            <div className="bg-white rounded-b-lg p-3 h-[calc(100%-36px)] grid grid-cols-3 gap-3 border border-gray-200">
+
+              {/* HEADER */}
+              <div className="col-span-3 flex justify-between items-center mb-2">
+                <motion.div
+                  animate={{ width: ["60px", "80px", "60px"] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="bg-indigo-200 h-4 rounded"
+                />
+
+                <div className="flex space-x-2">
+                  <div className="bg-indigo-200 h-3 w-12 rounded"></div>
+                  <div className="bg-indigo-200 h-3 w-12 rounded"></div>
+                  <div className="bg-indigo-200 h-3 w-12 rounded"></div>
+                </div>
+              </div>
+
+              {/* HERO */}
+              <motion.div
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="col-span-3 h-20 bg-indigo-200 rounded mb-3"
+              />
+
+              {/* CARDS */}
+              <div className="bg-indigo-200 h-24 rounded"></div>
+              <div className="bg-indigo-200 h-24 rounded"></div>
+              <div className="bg-indigo-200 h-24 rounded"></div>
+
+              {/* FOOTER */}
+              <div className="col-span-3 grid grid-cols-4 gap-2">
+                <div className="bg-indigo-200 h-8 rounded"></div>
+                <div className="bg-indigo-200 h-8 rounded"></div>
+                <div className="bg-indigo-200 h-8 rounded"></div>
+                <div className="bg-indigo-200 h-8 rounded"></div>
+              </div>
+
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</motion.div>
           ))}
         </div>
       </div>
