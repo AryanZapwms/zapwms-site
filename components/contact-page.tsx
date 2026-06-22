@@ -34,7 +34,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="py-32 bg-black relative">
+    <section className="py-32 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-10"
           >
-            <div className="bg-gray-900/50 border border-gray-800 rounded-3xl p-8 backdrop-blur-sm">
+            <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8">
               <h2 className="text-2xl font-bold text-white mb-6">
                 Contact Information
               </h2>
@@ -70,7 +70,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
-                    <p className="text-white">Digi.m@zapwms.com</p>
+                    <p className="text-gray-800 font-medium">connect@zapwms.com</p>
                   </div>
                 </div>
 
@@ -80,7 +80,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Phone</p>
-                    <p className="text-white">+91-8652071903 </p>
+                    
                   </div>
                 </div>
 
@@ -90,38 +90,38 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Location</p>
-                    <p className="text-white">Kandivali East, Mumbai</p>
+                    <p className="text-gray-800 font-medium">Kandivali East, Mumbai</p>
                   </div>
                 </div> */}
               </div>
             </div>
 
-            {/* <div className="bg-gray-900/50 border border-gray-800 rounded-3xl p-8 backdrop-blur-sm">
+            {/* <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8">
               <h3 className="text-xl font-bold text-white mb-4">
                 Why Choose Motion Records?
               </h3>
               <ul className="space-y-3">
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                  <span className="text-gray-300">
+                  <span className="text-gray-600">
                     Proven track record with 500+ successful campaigns
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                  <span className="text-gray-300">
+                  <span className="text-gray-600">
                     98% client satisfaction rate
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                  <span className="text-gray-300">
+                  <span className="text-gray-600">
                     $15M+ in revenue generated for clients
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                  <span className="text-gray-300">
+                  <span className="text-gray-600">
                     24/7 support and dedicated account management
                   </span>
                 </li>
@@ -136,7 +136,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             {!isSubmitted ? (
-              <div className="bg-gray-900/50 border border-gray-800 rounded-3xl p-8 backdrop-blur-sm">
+              <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8">
                 <h2 className="text-2xl font-bold text-white mb-6">
                   Send us a message
                 </h2>

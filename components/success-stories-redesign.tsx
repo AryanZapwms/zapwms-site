@@ -106,7 +106,7 @@ export default function SuccessStoriesRedesign() {
               onClick={() => setActiveStory(index)}
               className={`cursor-pointer p-6 rounded-2xl border relative overflow-hidden group transition-all duration-500 ${activeStory === index
                   ? "bg-gradient-to-br from-blue-500/10 to-purple-500/10 border-blue-500/30 scale-[1.02] shadow-xl shadow-blue-500/10"
-                  : "bg-gray-900/30 border-gray-800 hover:border-gray-700"
+                  : "bg-gray-50 border-gray-200 hover:border-indigo-300"
                 }`}
             >
               {/* Glow Effect */}
@@ -146,13 +146,13 @@ export default function SuccessStoriesRedesign() {
                   ))}
                 </div>
 
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   "{story.quote}"
                 </p>
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-white font-medium text-sm">{story.author}</p>
+                    <p className="text-gray-900 font-medium text-sm">{story.author}</p>
                     <p className="text-gray-500 text-xs">{story.position}</p>
                   </div>
 
@@ -175,11 +175,11 @@ export default function SuccessStoriesRedesign() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-white mb-4">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
                 {stories[activeStory].company} Case Study
               </h3>
 
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 "{stories[activeStory].quote}"
               </p>
 
@@ -187,7 +187,7 @@ export default function SuccessStoriesRedesign() {
                 {stories[activeStory].metrics.map((metric, index) => (
                   <div
                     key={index}
-                    className="flex justify-between items-center p-4 bg-black/30 rounded-lg"
+                    className="flex justify-between items-center p-4 bg-gray-100 rounded-lg"
                   >
                     <span className="text-gray-500">{metric.label}</span>
                     <div className="flex items-center space-x-4">

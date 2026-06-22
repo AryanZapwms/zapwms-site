@@ -107,7 +107,7 @@ export default function GetStartedFlow() {
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl font-bold text-white">Get Started</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Get Started</h1>
             <span className="text-sm text-gray-400">
               Step {currentStep + 1} of {steps.length}
             </span>
@@ -123,7 +123,7 @@ export default function GetStartedFlow() {
         </div>
 
         {/* Step Content */}
-        <div className="bg-gray-900/50 border border-gray-800/50 rounded-3xl p-8 backdrop-blur-sm min-h-[500px] flex flex-col">
+        <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm min-h-[500px] flex flex-col">
           <AnimatePresence mode="wait">
             {/* Step 0: Business Type */}
             {currentStep === 0 && (
@@ -146,8 +146,8 @@ export default function GetStartedFlow() {
                       onClick={() => setFormData((prev) => ({ ...prev, businessType: business.id }))}
                       className={`p-6 rounded-xl border transition-all duration-200 text-left ${
                         formData.businessType === business.id
-                          ? "bg-blue-500/20 border-blue-500/50 text-white"
-                          : "bg-gray-800/50 border-gray-700/50 text-gray-300 hover:border-gray-600/50"
+                          ? "bg-indigo-50 border-indigo-400 text-indigo-700"
+                          : "bg-white border-gray-200 text-gray-700 hover:border-indigo-300"
                       }`}
                     >
                       <div className="flex items-center space-x-4 mb-3">
@@ -192,8 +192,8 @@ export default function GetStartedFlow() {
                       onClick={() => setFormData((prev) => ({ ...prev, budget: budget.id }))}
                       className={`p-6 rounded-xl border transition-all duration-200 text-center ${
                         formData.budget === budget.id
-                          ? "bg-blue-500/20 border-blue-500/50 text-white"
-                          : "bg-gray-800/50 border-gray-700/50 text-gray-300 hover:border-gray-600/50"
+                          ? "bg-indigo-50 border-indigo-400 text-indigo-700"
+                          : "bg-white border-gray-200 text-gray-700 hover:border-indigo-300"
                       }`}
                     >
                       <div className="text-2xl font-bold mb-2">{budget.name}</div>
@@ -227,8 +227,8 @@ export default function GetStartedFlow() {
                       onClick={() => toggleService(service.id)}
                       className={`p-6 rounded-xl border transition-all duration-200 text-left ${
                         formData.services.includes(service.id)
-                          ? "bg-blue-500/20 border-blue-500/50 text-white"
-                          : "bg-gray-800/50 border-gray-700/50 text-gray-300 hover:border-gray-600/50"
+                          ? "bg-indigo-50 border-indigo-400 text-indigo-700"
+                          : "bg-white border-gray-200 text-gray-700 hover:border-indigo-300"
                       }`}
                     >
                       <div className="flex items-center justify-between mb-2">
@@ -263,8 +263,8 @@ export default function GetStartedFlow() {
                       onClick={() => toggleGoal(goal.id)}
                       className={`p-6 rounded-xl border transition-all duration-200 text-left ${
                         formData.goals.includes(goal.id)
-                          ? "bg-blue-500/20 border-blue-500/50 text-white"
-                          : "bg-gray-800/50 border-gray-700/50 text-gray-300 hover:border-gray-600/50"
+                          ? "bg-indigo-50 border-indigo-400 text-indigo-700"
+                          : "bg-white border-gray-200 text-gray-700 hover:border-indigo-300"
                       }`}
                     >
                       <div className="flex items-center space-x-4">

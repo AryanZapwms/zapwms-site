@@ -179,7 +179,7 @@ export default function BrochureInfographic() {
                                         </div>
                                         <div className="text-xs text-gray-400 truncate">{service.tagline}</div>
                                     </div>
-                                    <span className={`text-xs font-bold ${isActive ? service.textColor : "text-gray-300"}`}>
+                                    <span className={`text-xs font-bold ${isActive ? service.textColor : "text-gray-400"}`}>
                                         {service.number}
                                     </span>
                                     {isActive && <ChevronRight className={`w-4 h-4 flex-shrink-0 ${service.textColor}`} />}

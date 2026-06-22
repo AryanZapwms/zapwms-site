@@ -55,7 +55,7 @@ export default function SolutionsPage() {
   const [hovered, setHovered] = useState<number | null>(null)
 
   return (
-    <section className="py-32 bg-black relative overflow-hidden">
+    <section className="py-32 bg-white relative overflow-hidden">
 
       {/* 🌌 Background Glow */}
       <div className="absolute inset-0 opacity-20">
@@ -130,7 +130,7 @@ export default function SolutionsPage() {
 
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, i) => (
-                      <li key={i} className="text-gray-300 text-sm flex items-center">
+                      <li key={i} className="text-gray-600 text-sm flex items-center">
                         <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2" />
                         {feature}
                       </li>

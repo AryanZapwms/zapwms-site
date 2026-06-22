@@ -343,7 +343,7 @@ export default function ServicesPage() {
   const [expandedService, setExpandedService] = useState<number | null>(null)
 
   return (
-    <section className="py-32 bg-black relative">
+    <section className="py-32 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -353,7 +353,7 @@ export default function ServicesPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-6"
         >
-          <div className="inline-flex items-center px-5 py-2.5 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-sm text-gray-300 mb-8">
+          <div className="inline-flex items-center px-5 py-2.5 rounded-full border border-indigo-200 bg-indigo-50 text-sm text-indigo-700 mb-8">
             <div className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2.5 animate-pulse" />
              Digital Service Agency · Est. 1999
           </div>
@@ -402,7 +402,7 @@ export default function ServicesPage() {
               whileHover={{ y: -8, scale: 1.01 }}
               onHoverStart={() => setHoveredService(index)}
               onHoverEnd={() => setHoveredService(null)}
-              className={`relative bg-gray-900/50 border ${service.border} ${service.hover} rounded-3xl p-8 backdrop-blur-sm transition-all duration-300 group overflow-hidden`}
+              className={`relative bg-white border ${service.border} ${service.hover} rounded-3xl p-8 shadow-sm transition-all duration-300 group overflow-hidden`}
               style={{
                 boxShadow:
                   hoveredService === index
@@ -470,7 +470,7 @@ export default function ServicesPage() {
                           key={feature}
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
-                          className="flex items-center text-gray-300 text-sm"
+                          className="flex items-center text-gray-500 text-sm"
                         >
                           <div className={`w-1.5 h-1.5 ${service.dot} rounded-full mr-3 flex-shrink-0`} />
                           {feature}
