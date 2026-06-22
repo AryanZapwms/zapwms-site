@@ -15,7 +15,7 @@ export default function DigitalMarketing() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black">
+    <div className="relative min-h-screen bg-white">
       <BackgroundPaths />
       <AnimatedBackground />
       <BackgroundStripes />

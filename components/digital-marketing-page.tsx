@@ -362,23 +362,21 @@ const ScrollStackCard = memo(({
       aria-label={`View details for ${item.title}`}
     >
       <motion.div
-        className="relative p-8 rounded-3xl border border-white/10 
-                   bg-gradient-to-br from-white/5 to-white/[0.02] 
-                   backdrop-blur-xl cursor-pointer
+        className="relative p-8 rounded-3xl border border-gray-200 
+                   bg-white shadow-sm cursor-pointer
                    transition-all duration-300 ease-out
-                   hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-500/10
-                   focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:ring-offset-2 focus:ring-offset-black"
+                   hover:border-indigo-300 hover:shadow-xl hover:shadow-indigo-100
+                   focus:outline-none focus:ring-2 focus:ring-indigo-400/50 focus:ring-offset-2"
         whileHover={{ y: -4 }}
         whileTap={{ scale: 0.99 }}
       >
         {/* Glow effect on hover */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-yellow-400/0 via-yellow-400/5 to-yellow-400/0 
-                        opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-indigo-400/0 via-indigo-400/5 to-purple-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         
         {/* Icon badge */}
         <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full 
-                        bg-gradient-to-br from-yellow-400 to-amber-500 
-                        flex items-center justify-center text-lg shadow-lg shadow-yellow-500/25
+                        bg-gradient-to-br from-indigo-500 to-purple-600 
+                        flex items-center justify-center text-lg shadow-lg shadow-indigo-500/25
                         group-hover:scale-110 transition-transform duration-300">
           {item.icon || "✨"}
         </div>
@@ -397,7 +395,7 @@ const ScrollStackCard = memo(({
           </p>
           
           {/* Hover indicator */}
-          <div className="mt-4 flex items-center gap-2 text-sm text-yellow-400/80 
+          <div className="mt-4 flex items-center gap-2 text-sm text-indigo-500/80 
                           opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
             <span>Explore service</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -481,7 +479,7 @@ function ServiceDrawer({
         >
           {/* Backdrop with blur */}
           <motion.div
-            className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            className="absolute inset-0 bg-white/95 backdrop-blur-md"
             onClick={onClose}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -493,7 +491,7 @@ function ServiceDrawer({
           <motion.div
             className="relative w-full md:w-[55vw] lg:w-[48vw] xl:w-[42vw] 
                        bg-gradient-to-b from-gray-900 to-black 
-                       border-l border-white/10 overflow-y-auto
+                       border-l border-gray-100 overflow-y-auto
                        shadow-2xl shadow-black/50"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
@@ -510,7 +508,7 @@ function ServiceDrawer({
                 className="absolute top-6 right-6 group flex items-center gap-2 
                            text-gray-400 hover:text-white 
                            bg-white/5 hover:bg-white/10 
-                           border border-white/10 rounded-xl px-4 py-2 
+                           border border-gray-200 rounded-xl px-4 py-2 
                            transition-all duration-200
                            focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
                 whileHover={{ scale: 1.02 }}
@@ -534,7 +532,7 @@ function ServiceDrawer({
                 </h2>
               </div>
               
-              <p className="text-lg text-gray-400 mb-10 leading-relaxed">{service.desc}</p>
+              <p className="text-lg text-gray-500 mb-10 leading-relaxed">{service.desc}</p>
 
               {/* Best For Badge */}
               <motion.div 
@@ -569,8 +567,8 @@ function ServiceDrawer({
                   {service.details.map((detail, i) => (
                     <motion.div
                       key={i}
-                      className="group p-4 border border-white/10 rounded-xl 
-                                 bg-white/5 hover:bg-white/10 hover:border-yellow-400/30
+                      className="group p-4 border border-gray-100 rounded-xl 
+                                 bg-gray-50 hover:bg-indigo-50 hover:border-indigo-200
                                  transition-all duration-200 cursor-default"
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -579,7 +577,7 @@ function ServiceDrawer({
                     >
                       <div className="flex items-start gap-3">
                         <span className="text-yellow-400 mt-0.5">•</span>
-                        <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
+                        <span className="text-sm text-gray-600 group-hover:text-gray-900 transition-colors">
                           {detail}
                         </span>
                       </div>
@@ -607,13 +605,13 @@ function ServiceDrawer({
                   ].map((benefit, i) => (
                     <motion.div
                       key={i}
-                      className="p-4 border border-white/10 rounded-xl bg-white/5 
+                      className="p-4 border border-gray-100 rounded-xl bg-white 
                                  text-center hover:border-yellow-400/40 hover:bg-yellow-400/5
                                  transition-all duration-200"
                       whileHover={{ y: -2 }}
                     >
                       <div className="text-2xl mb-2">{benefit.icon}</div>
-                      <div className="text-xs font-medium text-gray-300">{benefit.text}</div>
+                      <div className="text-xs font-medium text-gray-600">{benefit.text}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -621,12 +619,12 @@ function ServiceDrawer({
 
               {/* CTA Section */}
               <motion.section 
-                className="text-center pt-8 border-t border-white/10"
+                className="text-center pt-8 border-t border-gray-100"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                <p className="text-gray-400 mb-6 max-w-md mx-auto">
+                <p className="text-gray-500 mb-6 max-w-md mx-auto">
                   Ready to transform your brand? Get a custom strategy tailored to your goals.
                 </p>
                 <motion.button
@@ -653,7 +651,7 @@ function ServiceDrawer({
                   <div className="absolute inset-0 -translate-x-full group-hover:animate-[shine_1s_ease-in-out] 
                                   bg-gradient-to-r from-transparent via-white/40 to-transparent" />
                 </motion.button>
-                <p className="mt-4 text-xs text-gray-500">
+                <p className="mt-4 text-xs text-gray-400">
                   No commitment • Response within 24 hours
                 </p>
               </motion.section>
@@ -670,7 +668,7 @@ export default function DigitalMarketingPage() {
   const [activeService, setActiveService] = useState<Service | null>(null);
 
   return (
-    <div className="relative bg-black text-white min-h-screen px-4 sm:px-6 py-16 sm:py-24 overflow-x-hidden">
+    <div className="relative bg-white text-gray-900 min-h-screen px-4 sm:px-6 py-16 sm:py-24 overflow-x-hidden">
       {/* Background decorations */}
       <DecorativeBackground />
       
@@ -683,13 +681,13 @@ export default function DigitalMarketingPage() {
       >
         <motion.div
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full 
-                     bg-white/5 border border-white/10 mb-6"
+                     bg-indigo-50 border border-indigo-200 mb-6"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
           <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
-          <span className="text-sm text-gray-300">20+ Premium Services</span>
+          <span className="text-sm text-gray-600">20+ Premium Services</span>
         </motion.div>
         
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 tracking-tight">
@@ -698,14 +696,14 @@ export default function DigitalMarketingPage() {
             Our Services
           </span>
         </h1>
-        <p className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+        <p className="text-gray-500 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
           Explore our comprehensive suite of digital marketing solutions 
           designed to scale your brand, engage audiences, and drive measurable growth.
         </p>
         
         {/* Scroll indicator */}
         <motion.div 
-          className="mt-12 flex flex-col items-center gap-2 text-gray-500"
+          className="mt-12 flex flex-col items-center gap-2 text-gray-400"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >

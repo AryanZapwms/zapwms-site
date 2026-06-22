@@ -20,14 +20,14 @@ export default function AnimatedBackground() {
     resizeCanvas()
     window.addEventListener("resize", resizeCanvas)
 
-    // Color orbs that move around the entire website
+    // Soft pastel orbs for light theme
     const orbs = [
-      { x: 0, y: 0, radius: 400, color: "59, 130, 246", speed: 0.3, angle: 0, offsetY: 0 }, // blue
-      { x: 0, y: 0, radius: 350, color: "147, 51, 234", speed: 0.2, angle: Math.PI, offsetY: 200 }, // purple
-      { x: 0, y: 0, radius: 300, color: "34, 197, 94", speed: 0.25, angle: Math.PI / 2, offsetY: 400 }, // green
-      { x: 0, y: 0, radius: 280, color: "249, 115, 22", speed: 0.35, angle: Math.PI * 1.5, offsetY: 600 }, // orange
-      { x: 0, y: 0, radius: 320, color: "236, 72, 153", speed: 0.28, angle: Math.PI * 0.7, offsetY: 800 }, // pink
-      { x: 0, y: 0, radius: 360, color: "168, 85, 247", speed: 0.22, angle: Math.PI * 1.2, offsetY: 1000 }, // violet
+      { x: 0, y: 0, radius: 500, color: "99, 102, 241", speed: 0.3, angle: 0, offsetY: 0 },       // indigo
+      { x: 0, y: 0, radius: 450, color: "168, 85, 247", speed: 0.2, angle: Math.PI, offsetY: 200 }, // purple
+      { x: 0, y: 0, radius: 400, color: "236, 72, 153", speed: 0.25, angle: Math.PI / 2, offsetY: 500 }, // pink
+      { x: 0, y: 0, radius: 380, color: "59, 130, 246", speed: 0.35, angle: Math.PI * 1.5, offsetY: 800 }, // blue
+      { x: 0, y: 0, radius: 420, color: "16, 185, 129", speed: 0.28, angle: Math.PI * 0.7, offsetY: 1100 }, // emerald
+      { x: 0, y: 0, radius: 460, color: "245, 158, 11", speed: 0.22, angle: Math.PI * 1.2, offsetY: 1400 }, // amber
     ]
 
     let animationId: number
@@ -37,16 +37,14 @@ export default function AnimatedBackground() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       time += 0.005
 
-      orbs.forEach((orb, index) => {
-        // Move orbs in circular patterns throughout the page
+      orbs.forEach((orb) => {
         orb.angle += orb.speed * 0.01
         orb.x = canvas.width / 2 + Math.cos(orb.angle + time) * (canvas.width * 0.4)
-        orb.y = orb.offsetY + canvas.height * 0.3 + Math.sin(orb.angle + time) * (canvas.height * 0.2)
+        orb.y = orb.offsetY + canvas.height * 0.15 + Math.sin(orb.angle + time) * (canvas.height * 0.1)
 
-        // Create gradient
         const gradient = ctx.createRadialGradient(orb.x, orb.y, 0, orb.x, orb.y, orb.radius)
-        gradient.addColorStop(0, `rgba(${orb.color}, 0.08)`)
-        gradient.addColorStop(0.5, `rgba(${orb.color}, 0.04)`)
+        gradient.addColorStop(0, `rgba(${orb.color}, 0.07)`)
+        gradient.addColorStop(0.5, `rgba(${orb.color}, 0.035)`)
         gradient.addColorStop(1, `rgba(${orb.color}, 0)`)
 
         ctx.fillStyle = gradient
@@ -60,9 +58,7 @@ export default function AnimatedBackground() {
 
     return () => {
       window.removeEventListener("resize", resizeCanvas)
-      if (animationId) {
-        cancelAnimationFrame(animationId)
-      }
+      if (animationId) cancelAnimationFrame(animationId)
     }
   }, [])
 

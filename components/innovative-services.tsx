@@ -53,7 +53,7 @@ export default function InnovativeServices() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-24 bg-black relative">
+    <section className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -62,8 +62,8 @@ export default function InnovativeServices() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Innovative services for growth</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">Innovative services for growth</h2>
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             Custom-tailored solutions to streamline, innovate, and grow.
           </p>
         </motion.div>
@@ -81,10 +81,10 @@ export default function InnovativeServices() {
                 whileHover={{ y: -5 }}
                 onHoverStart={() => setHoveredIndex(index)}
                 onHoverEnd={() => setHoveredIndex(null)}
-                className="bg-gray-900/30 border border-gray-800 rounded-2xl p-8 backdrop-blur-sm hover:border-gray-700 transition-all duration-300 group"
+                className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:border-indigo-200 hover:shadow-lg transition-all duration-300 group"
               >
-                <div className="aspect-video bg-gray-900 rounded-lg mb-6 overflow-hidden relative border border-gray-800">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 p-4">
+                <div className="aspect-video bg-gray-50 rounded-lg mb-6 overflow-hidden relative border border-gray-100">
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white p-4">
                     {/* Paid Social Mockup */}
                     {service.mockup === "social" && (
                       <motion.div
@@ -94,9 +94,9 @@ export default function InnovativeServices() {
                         viewport={{ once: true }}
                         className="w-full h-full p-2"
                       >
-                        <div className="bg-gray-800 rounded-lg p-3 h-full">
+                        <div className="bg-gray-100 rounded-lg p-3 h-full">
                           <div className="flex justify-between items-center mb-3">
-                            <div className="text-xs text-gray-400">Platforms</div>
+                            <div className="text-xs text-gray-500">Platforms</div>
                             <div className="flex space-x-2">
                               <motion.div
                                 initial={{ scale: 0, opacity: 0 }}
@@ -167,7 +167,7 @@ export default function InnovativeServices() {
                           </div>
                           <div className="flex justify-between items-center">
                             <div>
-                              <div className="text-xs text-gray-400 mb-1">Growth</div>
+                              <div className="text-xs text-gray-500 mb-1">Growth</div>
                               <motion.div
                                 animate={{ scale: [1, 1.1, 1] }}
                                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
@@ -201,7 +201,7 @@ export default function InnovativeServices() {
                         transition={{ duration: 1, delay: index * 0.2 }}
                         className="w-full h-full p-2"
                       >
-                        <div className="bg-gray-800 rounded-lg p-3 h-full">
+                        <div className="bg-gray-100 rounded-lg p-3 h-full">
                           <div className="flex items-center space-x-2 mb-4">
                             <motion.div
                               animate={{ rotate: [0, 360] }}
@@ -229,7 +229,7 @@ export default function InnovativeServices() {
                             </motion.div>
                             <div>
                               <div className="text-xs text-white">Google Ads</div>
-                              <div className="text-xs text-gray-400">Campaign Dashboard</div>
+                              <div className="text-xs text-gray-500">Campaign Dashboard</div>
                             </div>
                           </div>
                           <div className="space-y-2">
@@ -290,10 +290,10 @@ export default function InnovativeServices() {
                 transition={{ duration: 0.6, delay: (index + 2) * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="bg-gray-900/30 border border-gray-800 rounded-2xl p-8 backdrop-blur-sm hover:border-gray-700 transition-all duration-300 group"
+                className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:border-indigo-200 hover:shadow-lg transition-all duration-300 group"
               >
-                <div className="aspect-video bg-gray-900 rounded-lg mb-6 overflow-hidden relative border border-gray-800">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 p-4">
+                <div className="aspect-video bg-gray-50 rounded-lg mb-6 overflow-hidden relative border border-gray-100">
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white p-4">
                     {/* Email/SMS Mockup */}
                     {service.mockup === "email" && (
                       <motion.div
@@ -302,26 +302,26 @@ export default function InnovativeServices() {
                         transition={{ duration: 1, delay: (index + 2) * 0.2 }}
                         className="w-full h-full p-2"
                       >
-                        <div className="bg-gray-800 rounded-lg p-3 h-full">
+                        <div className="bg-gray-100 rounded-lg p-3 h-full">
                           <div className="space-y-2 mb-3">
                             <motion.div
                               animate={{ width: ["100%", "90%", "100%"] }}
                               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-                              className="bg-gray-700 h-2 rounded"
+                              className="bg-gray-200 h-2 rounded"
                             ></motion.div>
                             <motion.div
                               animate={{ width: ["75%", "85%", "75%"] }}
                               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, delay: 0.5 }}
-                              className="bg-gray-700 h-2 rounded"
+                              className="bg-gray-200 h-2 rounded"
                             ></motion.div>
                           </div>
                           <div className="space-y-1 mb-3">
-                            <div className="bg-gray-700 h-1 w-full rounded"></div>
-                            <div className="bg-gray-700 h-1 w-full rounded"></div>
-                            <div className="bg-gray-700 h-1 w-2/3 rounded"></div>
+                            <div className="bg-gray-200 h-1 w-full rounded"></div>
+                            <div className="bg-gray-200 h-1 w-full rounded"></div>
+                            <div className="bg-gray-200 h-1 w-2/3 rounded"></div>
                           </div>
                           <div className="flex justify-between items-center">
-                            <div className="bg-gray-700 h-6 w-20 rounded"></div>
+                            <div className="bg-gray-200 h-6 w-20 rounded"></div>
                             <motion.div
                               whileHover={{ scale: 1.05 }}
                               className="bg-blue-600 h-8 w-24 rounded text-xs flex items-center justify-center text-white cursor-pointer"
@@ -341,19 +341,19 @@ export default function InnovativeServices() {
                         transition={{ duration: 1, delay: (index + 2) * 0.2 }}
                         className="w-full h-full p-2"
                       >
-                        <div className="bg-gray-800 rounded-lg p-3 h-full">
-                          <div className="text-xs text-gray-400 mb-2">SEO Report</div>
+                        <div className="bg-gray-100 rounded-lg p-3 h-full">
+                          <div className="text-xs text-gray-500 mb-2">SEO Report</div>
                           <div className="grid grid-cols-2 gap-2 mb-2">
-                            <div className="bg-gray-700 rounded p-2">
-                              <div className="text-xs text-gray-400">Traffic</div>
+                            <div className="bg-gray-200 rounded p-2">
+                              <div className="text-xs text-gray-500">Traffic</div>
                               <motion.div
                                 animate={{ width: ["60%", "80%", "60%"] }}
                                 transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
                                 className="bg-gray-600 h-1 rounded mt-1"
                               ></motion.div>
                             </div>
-                            <div className="bg-gray-700 rounded p-2">
-                              <div className="text-xs text-gray-400">Ranking</div>
+                            <div className="bg-gray-200 rounded p-2">
+                              <div className="text-xs text-gray-500">Ranking</div>
                               <motion.div
                                 animate={{ width: ["75%", "90%", "75%"] }}
                                 transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
@@ -361,8 +361,8 @@ export default function InnovativeServices() {
                               ></motion.div>
                             </div>
                           </div>
-                          <div className="bg-gray-700 rounded p-2">
-                            <div className="text-xs text-gray-400">Site Audit</div>
+                          <div className="bg-gray-200 rounded p-2">
+                            <div className="text-xs text-gray-500">Site Audit</div>
                             <div className="space-y-1 mt-1">
                               <div className="bg-gray-600 h-1 w-full rounded"></div>
                               <div className="bg-gray-600 h-1 w-2/3 rounded"></div>
@@ -380,11 +380,11 @@ export default function InnovativeServices() {
                         transition={{ duration: 1, delay: (index + 2) * 0.2 }}
                         className="w-full h-full p-2"
                       >
-                        <div className="bg-gray-800 rounded-lg p-3 h-full">
-                          <div className="text-xs text-gray-400 mb-2">Performance</div>
+                        <div className="bg-gray-100 rounded-lg p-3 h-full">
+                          <div className="text-xs text-gray-500 mb-2">Performance</div>
                           <div className="grid grid-cols-2 gap-2 mb-2">
-                            <div className="bg-gray-700 rounded p-2">
-                              <div className="text-xs text-gray-400">Ranking</div>
+                            <div className="bg-gray-200 rounded p-2">
+                              <div className="text-xs text-gray-500">Ranking</div>
                               <motion.div
                                 animate={{ color: ["#10b981", "#3b82f6", "#10b981"] }}
                                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
@@ -393,14 +393,14 @@ export default function InnovativeServices() {
                                 #1
                               </motion.div>
                             </div>
-                            <div className="bg-gray-700 rounded p-2">
-                              <div className="text-xs text-gray-400">Impressions</div>
+                            <div className="bg-gray-200 rounded p-2">
+                              <div className="text-xs text-gray-500">Impressions</div>
                               <div className="text-xs text-white mt-1">12.5K</div>
                             </div>
                           </div>
                           <div className="grid grid-cols-2 gap-2">
-                            <div className="bg-gray-700 rounded p-2">
-                              <div className="text-xs text-gray-400">Clicks</div>
+                            <div className="bg-gray-200 rounded p-2">
+                              <div className="text-xs text-gray-500">Clicks</div>
                               <motion.div
                                 animate={{ scale: [1, 1.1, 1] }}
                                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
@@ -409,8 +409,8 @@ export default function InnovativeServices() {
                                 2.1K
                               </motion.div>
                             </div>
-                            <div className="bg-gray-700 rounded p-2">
-                              <div className="text-xs text-gray-400">Visitors</div>
+                            <div className="bg-gray-200 rounded p-2">
+                              <div className="text-xs text-gray-500">Visitors</div>
                               <div className="text-xs text-white mt-1">1.8K</div>
                             </div>
                           </div>
@@ -441,7 +441,7 @@ export default function InnovativeServices() {
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="bg-gray-900/30 border border-gray-800 rounded-2xl p-8 backdrop-blur-sm hover:border-gray-700 transition-all duration-300 group"
+              className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:border-indigo-200 hover:shadow-lg transition-all duration-300 group"
             >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="md:col-span-1 flex flex-col justify-between">
@@ -460,7 +460,7 @@ export default function InnovativeServices() {
                             className="flex items-center space-x-2 bg-gray-800/50 px-3 py-2 rounded-lg border border-gray-700/50"
                           >
                             <div className="text-green-400">{badge.icon}</div>
-                            <span className="text-xs text-gray-300">{badge.text}</span>
+                            <span className="text-xs text-gray-600">{badge.text}</span>
                           </div>
                         ))}
                       </div>
@@ -478,7 +478,7 @@ export default function InnovativeServices() {
 
                 <div className="md:col-span-2">
                   <div className="aspect-[16/9] bg-gray-900 rounded-lg overflow-hidden relative border border-gray-800">
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 p-4">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white p-4">
                       {/* Web Development Mockup */}
                       <motion.div
                         initial={{ opacity: 0 }}
@@ -487,7 +487,7 @@ export default function InnovativeServices() {
                         className="w-full h-full"
                       >
                         {/* Browser Chrome */}
-                        <div className="bg-gray-700 rounded-t-lg p-2 mb-2">
+                        <div className="bg-gray-200 rounded-t-lg p-2 mb-2">
                           <div className="flex items-center space-x-2">
                             <div className="flex space-x-1">
                               <div className="w-2 h-2 bg-red-500 rounded-full"></div>
@@ -505,27 +505,27 @@ export default function InnovativeServices() {
                             <motion.div
                               animate={{ width: ["60px", "80px", "60px"] }}
                               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-                              className="bg-gray-700 h-4 rounded"
+                              className="bg-gray-200 h-4 rounded"
                             ></motion.div>
                             <div className="flex space-x-2">
-                              <div className="bg-gray-700 h-3 w-12 rounded"></div>
-                              <div className="bg-gray-700 h-3 w-12 rounded"></div>
-                              <div className="bg-gray-700 h-3 w-12 rounded"></div>
+                              <div className="bg-gray-200 h-3 w-12 rounded"></div>
+                              <div className="bg-gray-200 h-3 w-12 rounded"></div>
+                              <div className="bg-gray-200 h-3 w-12 rounded"></div>
                             </div>
                           </div>
                           <motion.div
                             animate={{ opacity: [0.7, 1, 0.7] }}
                             transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                            className="col-span-3 h-20 bg-gray-700 rounded mb-3"
+                            className="col-span-3 h-20 bg-gray-200 rounded mb-3"
                           ></motion.div>
-                          <div className="bg-gray-700 h-24 rounded"></div>
-                          <div className="bg-gray-700 h-24 rounded"></div>
-                          <div className="bg-gray-700 h-24 rounded"></div>
+                          <div className="bg-gray-200 h-24 rounded"></div>
+                          <div className="bg-gray-200 h-24 rounded"></div>
+                          <div className="bg-gray-200 h-24 rounded"></div>
                           <div className="col-span-3 grid grid-cols-4 gap-2">
-                            <div className="bg-gray-700 h-8 rounded"></div>
-                            <div className="bg-gray-700 h-8 rounded"></div>
-                            <div className="bg-gray-700 h-8 rounded"></div>
-                            <div className="bg-gray-700 h-8 rounded"></div>
+                            <div className="bg-gray-200 h-8 rounded"></div>
+                            <div className="bg-gray-200 h-8 rounded"></div>
+                            <div className="bg-gray-200 h-8 rounded"></div>
+                            <div className="bg-gray-200 h-8 rounded"></div>
                           </div>
                         </div>
                       </motion.div>

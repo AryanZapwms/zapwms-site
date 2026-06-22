@@ -68,7 +68,7 @@ export default function SuccessStoriesRedesign() {
   const [activeStory, setActiveStory] = useState(0)
 
   return (
-    <section className="py-24 bg-black relative">
+    <section className="py-24 bg-gray-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -84,11 +84,11 @@ export default function SuccessStoriesRedesign() {
             Real Results from Real Clients
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Success Stories That Speak Volumes
           </h2>
 
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             See how we've helped businesses like yours achieve remarkable growth and success.
           </p>
         </motion.div>
@@ -120,23 +120,23 @@ export default function SuccessStoriesRedesign() {
                     {story.company.charAt(0)}
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-bold text-white">{story.company}</h3>
-                    <p className="text-sm text-gray-400">{story.industry}</p>
+                    <h3 className="text-lg font-bold text-gray-900">{story.company}</h3>
+                    <p className="text-sm text-gray-500">{story.industry}</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 mb-4">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-green-400">{story.results.revenue}</div>
-                    <div className="text-xs text-gray-400">Revenue</div>
+                    <div className="text-xs text-gray-500">Revenue</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-blue-400">{story.results.leads}</div>
-                    <div className="text-xs text-gray-400">Leads</div>
+                    <div className="text-xs text-gray-500">Leads</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-purple-400">{story.results.conversion}</div>
-                    <div className="text-xs text-gray-400">Conversion</div>
+                    <div className="text-xs text-gray-500">Conversion</div>
                   </div>
                 </div>
 
@@ -153,7 +153,7 @@ export default function SuccessStoriesRedesign() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-white font-medium text-sm">{story.author}</p>
-                    <p className="text-gray-400 text-xs">{story.position}</p>
+                    <p className="text-gray-500 text-xs">{story.position}</p>
                   </div>
 
                   <motion.div whileHover={{ x: 5 }}>
@@ -189,7 +189,7 @@ export default function SuccessStoriesRedesign() {
                     key={index}
                     className="flex justify-between items-center p-4 bg-black/30 rounded-lg"
                   >
-                    <span className="text-gray-400">{metric.label}</span>
+                    <span className="text-gray-500">{metric.label}</span>
                     <div className="flex items-center space-x-4">
                       <span className="text-red-400">{metric.before}</span>
                       <ArrowRight className="w-4 h-4 text-gray-500" />

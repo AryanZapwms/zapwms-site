@@ -7,7 +7,7 @@ import BackgroundPaths from "@/components/background-paths"
 
 export default function Contact() {
   return (
-    <div className="relative min-h-screen bg-black">
+    <div className="relative min-h-screen bg-white">
       <BackgroundPaths />
       <AnimatedBackground />
       <BackgroundStripes />

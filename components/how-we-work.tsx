@@ -10,7 +10,11 @@ const steps = [
     description: "We uncover growth opportunities and define a clear roadmap for your success.",
     icon: <Search className="w-8 h-8" />,
     mockup: "discovery",
-    gradient: "from-blue-500/20 to-blue-600/10",
+    gradient: "from-indigo-50 to-blue-50",
+    border: "border-indigo-100",
+    glow: "hover:shadow-[0_8px_40px_rgba(99,102,241,0.2)]",
+    iconColor: "text-indigo-500",
+    glowBg: "bg-indigo-500/10",
   },
   {
     number: "02",
@@ -18,7 +22,11 @@ const steps = [
     description: "We build powerful solutions and continuously optimize for performance and results.",
     icon: <Lightbulb className="w-8 h-8" />,
     mockup: "development",
-    gradient: "from-purple-500/20 to-purple-600/10",
+    gradient: "from-purple-50 to-violet-50",
+    border: "border-purple-100",
+    glow: "hover:shadow-[0_8px_40px_rgba(168,85,247,0.2)]",
+    iconColor: "text-purple-500",
+    glowBg: "bg-purple-500/10",
   },
   {
     number: "03",
@@ -26,14 +34,21 @@ const steps = [
     description: "We launch your product and scale it with data-driven strategies and ongoing support.",
     icon: <Rocket className="w-8 h-8" />,
     mockup: "launch",
-    gradient: "from-green-500/20 to-green-600/10",
+    gradient: "from-emerald-50 to-green-50",
+    border: "border-emerald-100",
+    glow: "hover:shadow-[0_8px_40px_rgba(16,185,129,0.2)]",
+    iconColor: "text-emerald-500",
+    glowBg: "bg-emerald-500/10",
   },
 ]
 
 export default function HowWeWork() {
   return (
-    <section className="py-32 bg-black relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-32 bg-white relative overflow-hidden">
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.04)_1px,transparent_1px),linear-gradient(to_right,rgba(99,102,241,0.04)_1px,transparent_1px)] bg-[size:48px_48px]" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,15 +56,19 @@ export default function HowWeWork() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">How We Work</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-200 text-sm text-indigo-700 font-medium mb-6">
+            <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2.5 animate-pulse" />
+            Our Process
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">How We Work</h2>
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             A simple, effective approach to building your brand with excellence.
           </p>
         </motion.div>
 
         <div className="relative">
-          <div className="hidden md:block absolute top-[55%] left-0 right-0 z-0">
-            <div className="max-w-5xl mx-auto h-[1px] bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 opacity-30" />
+          <div className="hidden md:block absolute top-[38%] left-0 right-0 z-0">
+            <div className="max-w-5xl mx-auto h-[1px] bg-gradient-to-r from-indigo-300 via-purple-300 to-emerald-300 opacity-60" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -61,12 +80,11 @@ export default function HowWeWork() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className={`bg-gradient-to-br ${step.gradient} border border-gray-700/70 rounded-3xl p-8 backdrop-blur-sm hover:border-gray-700/50 transition-all duration-300 group hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]`}
+                className={`bg-gradient-to-br ${step.gradient} border ${step.border} rounded-3xl p-8 transition-all duration-300 group ${step.glow} cursor-default`}
               >
                 {/* Mockup Area */}
-                <div className="aspect-video bg-gray-900 rounded-2xl mb-6 overflow-hidden relative border border-gray-800">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 p-4">
-                    {/* Discovery Mockup */}
+                <div className="aspect-video bg-white/70 rounded-2xl mb-6 overflow-hidden relative border border-white shadow-inner">
+                  <div className="absolute inset-0 p-4">
                     {step.mockup === "discovery" && (
                       <motion.div
                         initial={{ opacity: 0 }}
@@ -76,24 +94,29 @@ export default function HowWeWork() {
                       >
                         <div className="w-full max-w-[200px] space-y-3">
                           <div className="flex items-center space-x-2">
-                            <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                              <div className="w-3 h-3 bg-blue-500 rounded"></div>
+                            <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                              <div className="w-3 h-3 bg-indigo-500 rounded"></div>
                             </div>
                             <div className="flex-1 space-y-1">
-                              <div className="bg-gray-700 h-2 w-full rounded"></div>
-                              <div className="bg-gray-700 h-2 w-3/4 rounded"></div>
+                              <div className="bg-gray-200 h-2 w-full rounded"></div>
+                              <div className="bg-gray-200 h-2 w-3/4 rounded"></div>
                             </div>
                           </div>
                           <div className="grid grid-cols-2 gap-2">
-                            <div className="bg-gray-700 h-12 rounded-lg"></div>
-                            <div className="bg-gray-700 h-12 rounded-lg"></div>
+                            <div className="bg-indigo-100 h-12 rounded-lg flex items-center justify-center">
+                              <div className="w-6 h-6 bg-indigo-300 rounded"></div>
+                            </div>
+                            <div className="bg-blue-100 h-12 rounded-lg flex items-center justify-center">
+                              <div className="w-6 h-6 bg-blue-300 rounded"></div>
+                            </div>
                           </div>
-                          <div className="bg-gray-700 h-8 w-full rounded"></div>
+                          <div className="bg-indigo-500 h-8 w-full rounded-lg flex items-center justify-center">
+                            <div className="text-white text-xs font-medium">Analyze</div>
+                          </div>
                         </div>
                       </motion.div>
                     )}
 
-                    {/* Development Mockup */}
                     {step.mockup === "development" && (
                       <motion.div
                         initial={{ opacity: 0 }}
@@ -102,27 +125,28 @@ export default function HowWeWork() {
                         className="w-full h-full flex items-center justify-center"
                       >
                         <div className="w-full max-w-[200px] space-y-3">
-                          <div className="bg-gray-800 rounded-lg p-3">
+                          <div className="bg-gray-100 rounded-lg p-3">
                             <div className="flex items-center space-x-2 mb-2">
-                              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                              <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                             </div>
                             <div className="space-y-2">
-                              <div className="bg-gray-700 h-2 w-full rounded"></div>
-                              <div className="bg-gray-700 h-2 w-2/3 rounded"></div>
-                              <div className="bg-purple-500 h-2 w-1/2 rounded"></div>
+                              <div className="bg-gray-300 h-2 w-full rounded"></div>
+                              <div className="bg-gray-300 h-2 w-2/3 rounded"></div>
+                              <div className="bg-purple-400 h-2 w-1/2 rounded"></div>
                             </div>
                           </div>
                           <div className="flex space-x-2">
-                            <div className="bg-gray-700 h-8 flex-1 rounded"></div>
-                            <div className="bg-purple-500 h-8 w-16 rounded"></div>
+                            <div className="bg-gray-200 h-8 flex-1 rounded"></div>
+                            <div className="bg-purple-500 h-8 w-16 rounded flex items-center justify-center">
+                              <div className="text-white text-xs">Build</div>
+                            </div>
                           </div>
                         </div>
                       </motion.div>
                     )}
 
-                    {/* Launch Mockup */}
                     {step.mockup === "launch" && (
                       <motion.div
                         initial={{ opacity: 0 }}
@@ -132,29 +156,23 @@ export default function HowWeWork() {
                       >
                         <div className="w-full max-w-[200px] space-y-3">
                           <div className="flex items-center justify-between">
-                            <div className="text-xs text-gray-400">Status</div>
+                            <div className="text-xs text-gray-500 font-medium">Status</div>
                             <motion.div
                               animate={{ rotate: 360 }}
                               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                              className="w-6 h-6 border-2 border-green-500 border-t-transparent rounded-full"
+                              className="w-5 h-5 border-2 border-emerald-500 border-t-transparent rounded-full"
                             ></motion.div>
                           </div>
                           <div className="space-y-2">
-                            <div className="flex items-center space-x-2">
-                              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                              <div className="text-xs text-gray-300">Security</div>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                              <div className="text-xs text-gray-300">Efficiency</div>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                              <div className="text-xs text-gray-300">Speed</div>
-                            </div>
+                            {["Security", "Efficiency", "Speed"].map((item) => (
+                              <div key={item} className="flex items-center space-x-2">
+                                <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
+                                <div className="text-xs text-gray-600">{item}</div>
+                              </div>
+                            ))}
                             <div className="flex items-center space-x-2">
                               <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                              <div className="text-xs text-gray-300">Updating...</div>
+                              <div className="text-xs text-gray-600">Updating...</div>
                             </div>
                           </div>
                         </div>
@@ -163,36 +181,33 @@ export default function HowWeWork() {
                   </div>
                 </div>
 
-                <div className="h-px w-full bg-white/5 mb-4" />
+                <div className="h-px w-full bg-gray-200 mb-4" />
 
-                {/* Content */}
-                <div className="space-y-4 mt-6">
+                <div className="space-y-4 mt-4">
                   <div className="flex items-center space-x-4">
                     <motion.div
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.2 }}
-                      className="text-4xl font-bold text-gray-600"
+                      className="text-4xl font-bold text-gray-200"
                     >
                       {step.number}
                     </motion.div>
                     <motion.div
                       whileHover={{ rotate: 10, scale: 1.1 }}
-                      className="text-blue-400"
+                      className={`${step.iconColor} ${step.glowBg} p-2 rounded-xl`}
                     >
                       {step.icon}
                     </motion.div>
                   </div>
-                  <p className="text-xs uppercase tracking-widest text-gray-500">
-                    Step {step.number}
-                  </p>
-                  <p className="text-gray-400 leading-relaxed">{step.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
+                  <p className="text-xs uppercase tracking-widest text-gray-400">Step {step.number}</p>
+                  <p className="text-gray-500 leading-relaxed">{step.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
-
       </div>
     </section>
   )
