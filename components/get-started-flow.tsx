@@ -112,7 +112,7 @@ export default function GetStartedFlow() {
               Step {currentStep + 1} of {steps.length}
             </span>
           </div>
-          <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-gradient-to-r from-blue-500 to-purple-500"
               initial={{ width: "0%" }}
@@ -307,7 +307,7 @@ export default function GetStartedFlow() {
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
                       placeholder="Your full name"
                       required
                     />
@@ -318,7 +318,7 @@ export default function GetStartedFlow() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
                       placeholder="your@email.com"
                       required
                     />
@@ -329,7 +329,7 @@ export default function GetStartedFlow() {
                       type="text"
                       value={formData.company}
                       onChange={(e) => setFormData((prev) => ({ ...prev, company: e.target.value }))}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
                       placeholder="Your company name"
                     />
                   </div>
@@ -339,7 +339,7 @@ export default function GetStartedFlow() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
                       placeholder="(555) 123-4567"
                     />
                   </div>
@@ -364,20 +364,20 @@ export default function GetStartedFlow() {
                   Thank you for choosing Motion Records. We'll create a custom strategy based on your responses and get
                   back to you within 24 hours.
                 </p>
-                <div className="bg-gray-800/50 rounded-2xl p-6 mb-8">
+                <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-6 mb-8">
                   <h3 className="text-lg font-semibold text-white mb-4">What happens next?</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center space-x-3">
                       <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                         1
                       </div>
-                      <span className="text-gray-300">We'll analyze your responses and create a custom strategy</span>
+                      <span className="text-gray-600">We'll analyze your responses and create a custom strategy</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                         2
                       </div>
-                      <span className="text-gray-300">
+                      <span className="text-gray-600">
                         Our team will reach out within 24 hours to schedule a consultation
                       </span>
                     </div>
@@ -385,7 +385,7 @@ export default function GetStartedFlow() {
                       <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                         3
                       </div>
-                      <span className="text-gray-300">
+                      <span className="text-gray-600">
                         We'll present your personalized marketing plan and next steps
                       </span>
                     </div>
@@ -409,7 +409,7 @@ export default function GetStartedFlow() {
                   <AnimatedButton
                     onClick={prevStep}
                     variant="outline"
-                    className="bg-transparent border-gray-600 text-gray-300 hover:bg-gray-800"
+                    className="bg-white border-gray-300 text-gray-600 hover:bg-gray-50"
                   >
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Back

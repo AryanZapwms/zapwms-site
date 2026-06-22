@@ -72,7 +72,7 @@ const businessOptions: BusinessOption[] = [
       </div>,
       <div
         key="apple"
-        className="w-6 h-6 bg-gray-900 rounded-lg flex items-center justify-center text-white text-xs font-bold shadow-lg border border-white/20"
+        className="w-6 h-6 bg-indigo-600 rounded-lg flex items-center justify-center text-white text-xs font-bold shadow-lg"
       >
         ♪
       </div>,
@@ -162,7 +162,7 @@ export default function BusinessSelector() {
   }
 
   return (
-    <section className="py-24 bg-black relative">
+    <section className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -172,14 +172,14 @@ export default function BusinessSelector() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Find Your Perfect Strategy</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             Select your business type to receive a customized marketing approach
           </p>
         </motion.div>
 
-        <div className="bg-gray-900/50 border border-gray-800 rounded-3xl overflow-hidden backdrop-blur-sm">
+        <div className="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm">
           {/* Progress Bar */}
-          <div className="w-full h-1 bg-gray-800">
+          <div className="w-full h-1 bg-gray-200">
             <motion.div
               className="h-full bg-blue-500"
               initial={{ width: "0%" }}
@@ -201,10 +201,10 @@ export default function BusinessSelector() {
             {currentStep !== "select" && (
               <button
                 onClick={goBack}
-                className="mr-4 p-2 rounded-full hover:bg-gray-800 transition-colors"
+                className="mr-4 p-2 rounded-full hover:bg-gray-100 transition-colors"
                 aria-label="Go back"
               >
-                <ArrowLeft className="h-5 w-5 text-gray-400" />
+                <ArrowLeft className="h-5 w-5 text-gray-500" />
               </button>
             )}
             <div>
@@ -215,7 +215,7 @@ export default function BusinessSelector() {
                     ? selectedOption?.strategy.title
                     : "Get Your Strategy"}
               </h3>
-              <p className="text-sm text-gray-400 mt-1">
+              <p className="text-sm text-gray-500 mt-1">
                 {currentStep === "select"
                   ? "Select the option that best describes your business"
                   : currentStep === "strategy"
@@ -244,7 +244,7 @@ export default function BusinessSelector() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                       whileHover={{ scale: 1.02, y: -5 }}
-                      className="group w-full text-left p-6 rounded-2xl border transition-all duration-200 bg-gray-900/50 border-gray-800 hover:bg-gray-800/50 hover:border-gray-700"
+                      className="group w-full text-left p-6 rounded-2xl border transition-all duration-200 bg-gray-50 border-gray-200 hover:bg-indigo-50 hover:border-indigo-300"
                       onClick={() => {
                         setSelectedBusiness(option.id)
                         setCurrentStep("strategy")
@@ -258,7 +258,7 @@ export default function BusinessSelector() {
                           <h4 className="font-medium text-white text-lg">{option.name}</h4>
                         </div>
                       </div>
-                      <p className="text-sm text-gray-400 mb-3">{option.description}</p>
+                      <p className="text-sm text-gray-500 mb-3">{option.description}</p>
                       {option.platforms && <div className="flex space-x-2 mb-4">{option.platforms}</div>}
                       <div className="flex items-center text-sm text-blue-400 group-hover:text-blue-300">
                         <span>View strategy</span>
@@ -284,7 +284,7 @@ export default function BusinessSelector() {
                         {selectedOption.icon}
                       </GlossyIcon>
                       <h3 className="text-2xl font-bold text-white mb-4">{selectedOption.name}</h3>
-                      <p className="text-gray-400 mb-6">
+                      <p className="text-gray-500 mb-6">
                         Our tailored approach for {selectedOption.name.toLowerCase()} businesses focuses on driving
                         growth and maximizing your marketing ROI.
                       </p>
@@ -306,7 +306,7 @@ export default function BusinessSelector() {
                                 <span className="text-xs font-bold">{index + 1}</span>
                               </GlossyIcon>
                               <div>
-                                <span className="text-gray-300 text-lg">{step}</span>
+                                <span className="text-gray-600 text-lg">{step}</span>
                                 <p className="text-gray-500 text-sm mt-1">
                                   {
                                     [
@@ -352,7 +352,7 @@ export default function BusinessSelector() {
                           {selectedOption.icon}
                         </GlossyIcon>
                         <h3 className="text-2xl font-bold text-white mb-2">{selectedOption.strategy.title}</h3>
-                        <p className="text-gray-400">
+                        <p className="text-gray-500">
                           Enter your email to receive your personalized {selectedOption.name.toLowerCase()} marketing
                           strategy.
                         </p>
@@ -360,7 +360,7 @@ export default function BusinessSelector() {
 
                       <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
-                          <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                          <label htmlFor="email" className="block text-sm font-medium text-gray-600 mb-2">
                             Email Address
                           </label>
                           <input
@@ -369,7 +369,7 @@ export default function BusinessSelector() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="you@example.com"
-                            className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                            className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
                             required
                           />
                         </div>
@@ -396,9 +396,9 @@ export default function BusinessSelector() {
                         </svg>
                       </div>
                       <h3 className="text-2xl font-bold text-white mb-2">Strategy Sent!</h3>
-                      <p className="text-gray-400 mb-6">
+                      <p className="text-gray-500 mb-6">
                         Your personalized {selectedOption.name.toLowerCase()} marketing strategy has been sent to{" "}
-                        <span className="text-white">{email}</span>
+                        <span className="text-indigo-600 font-semibold">{email}</span>
                       </p>
                       <p className="text-sm text-gray-500">
                         Check your inbox in the next few minutes. If you don't see it, please check your spam folder.

@@ -201,7 +201,7 @@ export default function SuccessStoriesRedesign() {
             </div>
 
             <div className="relative">
-              <div className="aspect-video bg-gray-800 rounded-2xl overflow-hidden">
+              <div className="aspect-video bg-gray-100 rounded-2xl overflow-hidden">
                 <img
                   src={stories[activeStory].image || "/placeholder.svg"}
                   alt={`${stories[activeStory].company} results`}

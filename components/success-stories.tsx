@@ -72,7 +72,7 @@ const successStories = [
 
 export default function SuccessStories() {
   return (
-    <section className="py-32 bg-black relative">
+    <section className="py-32 bg-gray-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -82,7 +82,7 @@ export default function SuccessStories() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Success Stories</h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             Real results for real businesses. See how we've helped our clients achieve remarkable growth.
           </p>
         </motion.div>
@@ -114,7 +114,7 @@ export default function SuccessStories() {
               {/* Content Section */}
               <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gray-900 rounded-xl flex items-center justify-center mr-4 border border-gray-800">
+                  <div className="w-16 h-16 bg-indigo-50 rounded-xl flex items-center justify-center mr-4 border border-indigo-100">
                     <Image
                       src={story.logo || "/placeholder.svg"}
                       alt={story.name}
@@ -125,19 +125,19 @@ export default function SuccessStories() {
                   </div>
                   <div>
                     <h2 className="text-2xl font-bold text-white">{story.name}</h2>
-                    <p className="text-gray-400">{story.industry}</p>
+                    <p className="text-gray-500">{story.industry}</p>
                   </div>
                 </div>
 
                 <div className="space-y-6 mb-8">
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-2">The Challenge</h3>
-                    <p className="text-gray-400">{story.challenge}</p>
+                    <p className="text-gray-500">{story.challenge}</p>
                   </div>
 
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-2">Our Solution</h3>
-                    <p className="text-gray-400">{story.solution}</p>
+                    <p className="text-gray-500">{story.solution}</p>
                   </div>
 
                   <div>
@@ -150,14 +150,14 @@ export default function SuccessStories() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                           </div>
-                          <span className="text-gray-300">{result}</span>
+                          <span className="text-gray-600">{result}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
 
-                <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 mb-8">
+                <div className="bg-white border border-gray-100 rounded-2xl p-6 mb-8 shadow-sm">
                   <div className="flex items-center mb-4">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
@@ -165,7 +165,7 @@ export default function SuccessStories() {
                   </div>
                   <div className="flex mb-4">
                     <Quote className="h-8 w-8 text-blue-500 mr-2 flex-shrink-0" />
-                    <p className="text-gray-300 italic">{story.testimonial}</p>
+                    <p className="text-gray-600 italic">{story.testimonial}</p>
                   </div>
                   <div className="flex items-center">
                     <Image
@@ -177,7 +177,7 @@ export default function SuccessStories() {
                     />
                     <div>
                       <p className="font-semibold text-white">{story.person.name}</p>
-                      <p className="text-sm text-gray-400">{story.person.role}</p>
+                      <p className="text-sm text-gray-500">{story.person.role}</p>
                     </div>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ export default function SuccessStories() {
           className="text-center mt-24"
         >
           <h2 className="text-3xl font-bold text-white mb-6">Ready to Write Your Success Story?</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto mb-8">
             Let's create a marketing strategy that delivers real results for your business.
           </p>
           <GlowButton size="lg" className="px-10 py-6 text-lg bg-white text-black hover:bg-gray-100">

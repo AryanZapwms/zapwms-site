@@ -230,7 +230,7 @@ export default function CustomerInquiry() {
                             className="px-3 py-2 hover:bg-gray-700 rounded-md cursor-pointer"
                             onClick={() => selectBudget(budget.id)}
                           >
-                            <span className="text-white">{budget.name}</span>
+                            <span className="text-gray-800">{budget.name}</span>
                           </div>
                         ))}
                       </div>
@@ -285,7 +285,7 @@ export default function CustomerInquiry() {
             <p className="text-xl text-gray-600 mb-6">Your inquiry has been submitted successfully.</p>
             <p className="text-gray-500 mb-8">
               Our team will review your project details and get back to you within 24 hours at{" "}
-              <span className="text-white">{formData.email}</span>.
+              <span className="text-indigo-600 font-semibold">{formData.email}</span>.
             </p>
             <GlowButton
               onClick={() => {

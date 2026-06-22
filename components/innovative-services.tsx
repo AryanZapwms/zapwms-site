@@ -270,7 +270,7 @@ export default function InnovativeServices() {
                             </div>
                             <div className="flex justify-between text-xs">
                               <span className="text-gray-400">CTR</span>
-                              <span className="text-gray-300">8.2%</span>
+                              <span className="text-gray-600">8.2%</span>
                             </div>
                             <div className="flex justify-between text-xs">
                               <span className="text-gray-400">Quality Score</span>

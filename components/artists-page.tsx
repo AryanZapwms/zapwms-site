@@ -72,11 +72,11 @@ export default function SolutionsPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
             Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Digital Products</span> That Scale
           </h1>
 
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             We design and develop high-performing websites and applications that drive growth, engagement, and results.
           </p>
         </motion.div>
@@ -89,15 +89,15 @@ export default function SolutionsPage() {
               whileHover={{ y: -8, scale: 1.05 }}
               className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md"
             >
-              <div className="text-3xl font-bold text-white mb-2">{item.value}</div>
-              <div className="text-sm text-gray-400">{item.label}</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">{item.value}</div>
+              <div className="text-sm text-gray-500">{item.label}</div>
             </motion.div>
           ))}
         </div>
 
         {/* 🧩 SERVICES */}
         <div className="mb-32">
-          <h2 className="text-3xl font-bold text-white text-center mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-16">
             What We Can Do For You
           </h2>
 
@@ -122,11 +122,11 @@ export default function SolutionsPage() {
                 <div className="relative z-10">
                   <div className="text-blue-400 mb-6">{service.icon}</div>
 
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition">
                     {service.title}
                   </h3>
 
-                  <p className="text-gray-400 mb-5">{service.description}</p>
+                  <p className="text-gray-500 mb-5">{service.description}</p>
 
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, i) => (
@@ -137,7 +137,7 @@ export default function SolutionsPage() {
                     ))}
                   </ul>
 
-                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-white transition" />
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-indigo-600 transition" />
                 </div>
               </motion.div>
             ))}
@@ -150,11 +150,11 @@ export default function SolutionsPage() {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-3xl p-12 backdrop-blur-md"
         >
-          <h2 className="text-3xl font-bold text-white mb-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Let’s Build Something Great Together
           </h2>
 
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-500 mb-8 max-w-2xl mx-auto">
             Whether you need a website, app, or full digital solution — we help you launch, scale, and grow.
           </p>
 

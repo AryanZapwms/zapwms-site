@@ -5,7 +5,7 @@ import GlossyIcon from "./glossy-icon"
 
 export default function BrandStrategy() {
   return (
-    <section className="py-24 bg-gray-900/50 relative backdrop-blur-sm">
+    <section className="py-24 bg-gray-50 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Our Expertise</h2>

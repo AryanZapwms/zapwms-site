@@ -53,7 +53,7 @@ export default function ROICalculatorHome() {
   }
 
   return (
-    <section className="py-24 bg-black relative backdrop-blur-sm">
+    <section className="py-24 bg-gray-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -63,12 +63,12 @@ export default function ROICalculatorHome() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Calculate Your ROI</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             See how much revenue you could generate with our proven marketing strategies
           </p>
         </motion.div>
 
-        <div className="bg-gray-900/40 border border-gray-700/30 rounded-3xl p-8 backdrop-blur-sm relative overflow-hidden">
+        <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm relative overflow-hidden">
           {/* Subtle animated background */}
           <motion.div
             className="absolute inset-0 opacity-20"
@@ -99,7 +99,7 @@ export default function ROICalculatorHome() {
                       onClick={() => setSelectedBusiness(business.id)}
                       className={`p-4 rounded-xl border transition-all duration-200 text-left ${selectedBusiness === business.id
                           ? "bg-blue-500/20 border-blue-500/50 text-white"
-                          : "bg-gray-800/50 border-gray-700/50 text-gray-300 hover:border-gray-600/50"
+                          : "bg-white border-gray-200 text-gray-700 hover:border-indigo-300"
                         }`}
                     >
                       <div className="flex items-center space-x-3 mb-2">
@@ -135,24 +135,24 @@ export default function ROICalculatorHome() {
                       background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${((selectedBudget - 1000) / (25000 - 1000)) * 100}%, #374151 ${((selectedBudget - 1000) / (25000 - 1000)) * 100}%, #374151 100%)`,
                     }}
                   />
-                  <div className="flex justify-between text-sm text-gray-400 mt-2">
+                  <div className="flex justify-between text-sm text-gray-500 mt-2">
                     <span>$1K</span>
                     <span>$25K</span>
                   </div>
                 </div>
                 <div className="text-center mt-4">
                   <span className="text-3xl font-bold text-white">${selectedBudget.toLocaleString()}</span>
-                  <span className="text-gray-400 ml-2">per month</span>
+                  <span className="text-gray-500 ml-2">per month</span>
                 </div>
               </div>
 
               {/* Data Disclaimer */}
-              <div className="bg-gray-800/30 border border-gray-700/50 rounded-xl p-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
                 <div className="flex items-center space-x-3 mb-2">
                   <BarChart3 className="w-5 h-5 text-blue-400" />
                   <span className="text-sm font-medium text-white">Based on Real Client Data</span>
                 </div>
-                <p className="text-xs text-gray-400 leading-relaxed">
+                <p className="text-xs text-gray-500 leading-relaxed">
                   These projections are based on actual performance data from our existing clients across similar
                   business types and budget ranges. Individual results may vary.
                 </p>
@@ -205,14 +205,14 @@ export default function ROICalculatorHome() {
                     >
                       {Math.round((calculateROI(selectedBudget) / selectedBudget) * 100)}%
                     </motion.div>
-                    <div className="text-gray-400 text-sm">ROI</div>
+                    <div className="text-gray-500 text-sm">ROI</div>
                   </div>
                 </div>
               </div>
 
               {/* Revenue Cards */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700/50 text-center">
+                <div className="bg-indigo-50 rounded-2xl p-6 border border-indigo-100 text-center">
                   <DollarSign className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <motion.div
                     key={`monthly-${selectedBudget}-${selectedBusiness}`}
@@ -222,10 +222,10 @@ export default function ROICalculatorHome() {
                   >
                     ${calculateMonthlyRevenue(selectedBudget).toLocaleString()}
                   </motion.div>
-                  <div className="text-gray-400 text-sm">Monthly Revenue</div>
+                  <div className="text-gray-500 text-sm">Monthly Revenue</div>
                 </div>
 
-                <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700/50 text-center">
+                <div className="bg-indigo-50 rounded-2xl p-6 border border-indigo-100 text-center">
                   <TrendingUp className="w-8 h-8 text-blue-400 mx-auto mb-2" />
                   <motion.div
                     key={`annual-${selectedBudget}-${selectedBusiness}`}
@@ -235,7 +235,7 @@ export default function ROICalculatorHome() {
                   >
                     ${calculateROI(selectedBudget).toLocaleString()}
                   </motion.div>
-                  <div className="text-gray-400 text-sm">Annual Revenue</div>
+                  <div className="text-gray-500 text-sm">Annual Revenue</div>
                 </div>
               </div>
             </div>

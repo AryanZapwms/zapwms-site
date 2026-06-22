@@ -42,10 +42,10 @@ export default function ContactPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Get In Touch
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             Ready to transform your brand? Let's start a conversation about your
             goals and how we can help you achieve them.
           </p>
@@ -60,7 +60,7 @@ export default function ContactPage() {
             className="space-y-10"
           >
             <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8">
-              <h2 className="text-2xl font-bold text-white mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Contact Information
               </h2>
               <div className="space-y-6">
@@ -69,7 +69,7 @@ export default function ContactPage() {
                     <Mail className="h-6 w-6 text-blue-400" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm">Email</p>
+                    <p className="text-gray-500 text-sm">Email</p>
                     <p className="text-gray-800 font-medium">connect@zapwms.com</p>
                   </div>
                 </div>
@@ -79,7 +79,7 @@ export default function ContactPage() {
                     <Phone className="h-6 w-6 text-green-400" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm">Phone</p>
+                    <p className="text-gray-500 text-sm">Phone</p>
                     
                   </div>
                 </div>
@@ -89,7 +89,7 @@ export default function ContactPage() {
                     <MapPin className="h-6 w-6 text-purple-400" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm">Location</p>
+                    <p className="text-gray-500 text-sm">Location</p>
                     <p className="text-gray-800 font-medium">Kandivali East, Mumbai</p>
                   </div>
                 </div> */}
@@ -97,7 +97,7 @@ export default function ContactPage() {
             </div>
 
             {/* <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8">
-              <h3 className="text-xl font-bold text-white mb-4">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
                 Why Choose Motion Records?
               </h3>
               <ul className="space-y-3">
@@ -137,7 +137,7 @@ export default function ContactPage() {
           >
             {!isSubmitted ? (
               <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8">
-                <h2 className="text-2xl font-bold text-white mb-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Send us a message
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -145,7 +145,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-gray-300 mb-2"
+                        className="block text-sm font-medium text-gray-700 mb-2"
                       >
                         Name
                       </label>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
                         placeholder="Your name"
                       />
                     </div>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-gray-300 mb-2"
+                        className="block text-sm font-medium text-gray-700 mb-2"
                       >
                         Email
                       </label>
@@ -175,7 +175,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
                         placeholder="you@example.com"
                       />
                     </div>
@@ -184,7 +184,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-medium text-gray-300 mb-2"
+                      className="block text-sm font-medium text-gray-700 mb-2"
                     >
                       Subject
                     </label>
@@ -195,7 +195,7 @@ export default function ContactPage() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
                       placeholder="How can we help you?"
                     />
                   </div>
@@ -203,7 +203,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-gray-300 mb-2"
+                      className="block text-sm font-medium text-gray-700 mb-2"
                     >
                       Message
                     </label>
@@ -214,7 +214,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       rows={6}
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
                       placeholder="Tell us about your project..."
                     ></textarea>
                   </div>
@@ -252,7 +252,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="bg-gray-900/50 border border-gray-800 rounded-3xl p-12 backdrop-blur-sm text-center"
+                className="bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-100 rounded-3xl p-12 text-center"
               >
                 <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                   <motion.div
@@ -263,10 +263,10 @@ export default function ContactPage() {
                     <Send className="h-10 w-10 text-green-500" />
                   </motion.div>
                 </div>
-                <h2 className="text-3xl font-bold text-white mb-4">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
                   Message Sent!
                 </h2>
-                <p className="text-xl text-gray-300 mb-6">
+                <p className="text-xl text-gray-600 mb-6">
                   Thank you for reaching out. We'll get back to you within 24
                   hours.
                 </p>
