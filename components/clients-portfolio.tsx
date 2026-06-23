@@ -2,294 +2,392 @@
 
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { ExternalLink, Globe, TrendingUp, Star } from "lucide-react"
+import { ExternalLink, Globe, TrendingUp } from "lucide-react"
 import Link from "next/link"
-import AnimatedButton from "./animated-button"
 
 const clients = [
   {
-    name: "ZAP Solutionz",
-    url: "https://zapsolutionz.com",
-    category: "Digital Agency",
-    description: "Full-service digital solutions company — sister brand under the ZAP umbrella with 15+ years of global reach.",
-    tags: ["Web Design", "Branding", "Digital Marketing"],
-    color: "indigo",
-    gradient: "from-indigo-50 to-blue-50",
+    name: "Armorray",
+    url: "https://armorray.com",
+    category: "HealthTech / MedTech",
+    description: "Professional web-based DICOM medical imaging platform for CT, MRI & X-ray diagnostics.",
+    tags: ["Web Development", "Healthcare", "SaaS"],
+    color: "#6366F1",
+    bg: "bg-indigo-500",
+    light: "from-indigo-50 to-blue-50",
     border: "border-indigo-100",
     badge: "bg-indigo-100 text-indigo-700",
-    icon_bg: "bg-indigo-500",
-    glow: "hover:shadow-[0_8px_40px_rgba(99,102,241,0.25)]",
-    initials: "ZS",
-    featured: true,
+    glow: "hover:shadow-indigo-200/70",
+    initials: "AR",
   },
   {
-    name: "Colorants Chem",
-    url: "#",
-    category: "Pharmaceuticals",
-    description: "B2B pharma brand with end-to-end digital marketing, SEO optimization, and brand identity development.",
-    tags: ["SEO", "B2B Marketing", "Brand Identity"],
-    color: "blue",
-    gradient: "from-blue-50 to-cyan-50",
-    border: "border-blue-100",
-    badge: "bg-blue-100 text-blue-700",
-    icon_bg: "bg-blue-500",
-    glow: "hover:shadow-[0_8px_40px_rgba(59,130,246,0.25)]",
+    name: "CineCMS",
+    url: "https://www.cinecms.in",
+    category: "Music / Entertainment",
+    description: "All-in-one music distribution & rights management platform for artists and labels.",
+    tags: ["Branding", "Web Design", "Digital Marketing"],
+    color: "#8B5CF6",
+    bg: "bg-purple-500",
+    light: "from-purple-50 to-violet-50",
+    border: "border-purple-100",
+    badge: "bg-purple-100 text-purple-700",
+    glow: "hover:shadow-purple-200/70",
     initials: "CC",
   },
   {
-    name: "Aqua Excel",
-    url: "#",
-    category: "Water Treatment",
-    description: "Industrial water treatment company — complete digital presence, Google Ads, and performance marketing.",
-    tags: ["Google Ads", "PPC", "Performance Marketing"],
-    color: "cyan",
-    gradient: "from-cyan-50 to-teal-50",
-    border: "border-cyan-100",
-    badge: "bg-cyan-100 text-cyan-700",
-    icon_bg: "bg-cyan-500",
-    glow: "hover:shadow-[0_8px_40px_rgba(6,182,212,0.25)]",
-    initials: "AE",
-  },
-  {
-    name: "Ashwamedh Engineers",
-    url: "#",
-    category: "Engineering",
-    description: "Industrial fabrication company scaled with targeted digital marketing and lead generation strategies.",
-    tags: ["Lead Generation", "SEO", "Social Media"],
-    color: "orange",
-    gradient: "from-orange-50 to-amber-50",
-    border: "border-orange-100",
-    badge: "bg-orange-100 text-orange-700",
-    icon_bg: "bg-orange-500",
-    glow: "hover:shadow-[0_8px_40px_rgba(249,115,22,0.25)]",
-    initials: "AE",
-  },
-  {
-    name: "Orion Scientific",
-    url: "#",
-    category: "Scientific Equipment",
-    description: "Premium scientific equipment supplier — digital brand launch, social campaigns, and e-commerce growth.",
-    tags: ["E-commerce", "Brand Launch", "Social Ads"],
-    color: "purple",
-    gradient: "from-purple-50 to-violet-50",
-    border: "border-purple-100",
-    badge: "bg-purple-100 text-purple-700",
-    icon_bg: "bg-purple-500",
-    glow: "hover:shadow-[0_8px_40px_rgba(168,85,247,0.25)]",
-    initials: "OS",
-  },
-  {
-    name: "JVC Equipments",
-    url: "#",
-    category: "Industrial Equipment",
-    description: "Industrial equipment brand with thoughtful SEO and website support aligned to their niche audience.",
-    tags: ["SEO", "Website", "Content Marketing"],
-    color: "emerald",
-    gradient: "from-emerald-50 to-green-50",
-    border: "border-emerald-100",
-    badge: "bg-emerald-100 text-emerald-700",
-    icon_bg: "bg-emerald-500",
-    glow: "hover:shadow-[0_8px_40px_rgba(16,185,129,0.25)]",
-    initials: "JVC",
-  },
-  {
-    name: "SM Tech Systems",
-    url: "#",
-    category: "Technology",
-    description: "Tech solutions company that achieved clarity and traction with ZAPWMS's digital and website strategy.",
-    tags: ["Website Design", "Digital Marketing", "Analytics"],
-    color: "sky",
-    gradient: "from-sky-50 to-blue-50",
-    border: "border-sky-100",
-    badge: "bg-sky-100 text-sky-700",
-    icon_bg: "bg-sky-500",
-    glow: "hover:shadow-[0_8px_40px_rgba(14,165,233,0.25)]",
-    initials: "SMT",
-  },
-  {
-    name: "Fission Biotech",
-    url: "#",
-    category: "Biotech / Pharma",
-    description: "Biotech startup that partnered with ZAPWMS for website, digital marketing and online brand building.",
-    tags: ["Startup Marketing", "SEO", "Web Development"],
-    color: "pink",
-    gradient: "from-pink-50 to-rose-50",
+    name: "LinkNSmile",
+    url: "https://linknsmile.com",
+    category: "E-Commerce / Marketplace",
+    description: "India's trusted online marketplace connecting small businesses, local sellers & conscious shoppers.",
+    tags: ["E-Commerce", "SEO", "Performance Marketing"],
+    color: "#EC4899",
+    bg: "bg-pink-500",
+    light: "from-pink-50 to-rose-50",
     border: "border-pink-100",
     badge: "bg-pink-100 text-pink-700",
-    icon_bg: "bg-pink-500",
-    glow: "hover:shadow-[0_8px_40px_rgba(236,72,153,0.25)]",
-    initials: "FB",
+    glow: "hover:shadow-pink-200/70",
+    initials: "LS",
   },
   {
-    name: "Monarch Elevator",
-    url: "#",
-    category: "Real Estate / Infra",
-    description: "Elevator and lift solutions company — smooth digital marketing journey and brand growth with ZAPWMS.",
-    tags: ["Instagram Ads", "Meta Ads", "Branding"],
-    color: "fuchsia",
-    gradient: "from-fuchsia-50 to-purple-50",
-    border: "border-fuchsia-100",
-    badge: "bg-fuchsia-100 text-fuchsia-700",
-    icon_bg: "bg-fuchsia-500",
-    glow: "hover:shadow-[0_8px_40px_rgba(217,70,239,0.25)]",
-    initials: "ME",
+    name: "TradingWala",
+    url: "https://tradingwala.com",
+    category: "Finance / Trading",
+    description: "Stock market trading platform offering insights, tools, and resources for Indian retail investors.",
+    tags: ["Web Development", "Digital Marketing", "SEO"],
+    color: "#10B981",
+    bg: "bg-emerald-500",
+    light: "from-emerald-50 to-green-50",
+    border: "border-emerald-100",
+    badge: "bg-emerald-100 text-emerald-700",
+    glow: "hover:shadow-emerald-200/70",
+    initials: "TW",
   },
   {
-    name: "Sweetech Machinery",
-    url: "#",
-    category: "Manufacturing",
-    description: "Machinery brand that gained significant SEO visibility and digital marketing ROI with ZAPWMS.",
-    tags: ["SEO", "Google Ads", "Performance"],
-    color: "teal",
-    gradient: "from-teal-50 to-emerald-50",
-    border: "border-teal-100",
-    badge: "bg-teal-100 text-teal-700",
-    icon_bg: "bg-teal-500",
-    glow: "hover:shadow-[0_8px_40px_rgba(20,184,166,0.25)]",
-    initials: "SW",
+    name: "Movement Creations",
+    url: "https://movementcreations.in",
+    category: "Music / Film Distribution",
+    description: "Full-service music, video & movie distribution company empowering independent artists.",
+    tags: ["Branding", "Social Media", "Video Marketing"],
+    color: "#F59E0B",
+    bg: "bg-amber-500",
+    light: "from-amber-50 to-yellow-50",
+    border: "border-amber-100",
+    badge: "bg-amber-100 text-amber-700",
+    glow: "hover:shadow-amber-200/70",
+    initials: "MC",
   },
   {
-    name: "Eurobond Adhesives",
-    url: "#",
-    category: "Chemicals / Adhesives",
-    description: "Specialty adhesive brand — digital marketing, clear communication strategy and measurable online growth.",
-    tags: ["Digital Marketing", "LinkedIn", "Content"],
-    color: "yellow",
-    gradient: "from-yellow-50 to-amber-50",
-    border: "border-yellow-100",
-    badge: "bg-yellow-100 text-yellow-700",
-    icon_bg: "bg-yellow-500",
-    glow: "hover:shadow-[0_8px_40px_rgba(234,179,8,0.25)]",
-    initials: "EB",
+    name: "InstaPeels",
+    url: "https://instapeels.com",
+    category: "Skincare / Beauty",
+    description: "Pioneering home-use chemical peels in India — professional-grade cosmetic treatments for home use.",
+    tags: ["Instagram Ads", "Meta Ads", "E-Commerce SEO"],
+    color: "#06B6D4",
+    bg: "bg-cyan-500",
+    light: "from-cyan-50 to-teal-50",
+    border: "border-cyan-100",
+    badge: "bg-cyan-100 text-cyan-700",
+    glow: "hover:shadow-cyan-200/70",
+    initials: "IP",
   },
   {
-    name: "Rocktech Engineers",
-    url: "#",
-    category: "Engineering",
-    description: "Engineering company with streamlined SEO, digital marketing and strong search engine presence.",
-    tags: ["SEO", "B2B Leads", "Google Ads"],
-    color: "red",
-    gradient: "from-red-50 to-rose-50",
+    name: "FCRM Cambodia",
+    url: "https://fcrmcambodia.healthcarese.asia",
+    category: "Healthcare / International",
+    description: "Healthcare service platform for Cambodia — digital presence, SEO and multilingual web development.",
+    tags: ["Web Development", "International SEO", "Healthcare"],
+    color: "#EF4444",
+    bg: "bg-red-500",
+    light: "from-red-50 to-rose-50",
     border: "border-red-100",
     badge: "bg-red-100 text-red-700",
-    icon_bg: "bg-red-500",
-    glow: "hover:shadow-[0_8px_40px_rgba(239,68,68,0.25)]",
-    initials: "RE",
+    glow: "hover:shadow-red-200/70",
+    initials: "FC",
+  },
+  {
+    name: "DevAccounts",
+    url: "https://devaccounts.com",
+    category: "Finance / Accounting",
+    description: "Developer-focused accounting and financial management platform with full digital branding.",
+    tags: ["Branding", "Web Design", "Google Ads"],
+    color: "#3B82F6",
+    bg: "bg-blue-500",
+    light: "from-blue-50 to-sky-50",
+    border: "border-blue-100",
+    badge: "bg-blue-100 text-blue-700",
+    glow: "hover:shadow-blue-200/70",
+    initials: "DA",
+  },
+  {
+    name: "Samson Orgo",
+    url: "https://samsonorgo.com",
+    category: "Organic / FMCG",
+    description: "Organic products brand with full digital marketing, brand identity and online growth strategy.",
+    tags: ["Branding", "Social Media", "Performance Marketing"],
+    color: "#84CC16",
+    bg: "bg-lime-500",
+    light: "from-lime-50 to-green-50",
+    border: "border-lime-100",
+    badge: "bg-lime-100 text-lime-700",
+    glow: "hover:shadow-lime-200/70",
+    initials: "SO",
+  },
+  {
+    name: "Heckyl Technologies",
+    url: "https://www.heckyl.com",
+    category: "FinTech / Data Analytics",
+    description: "AI-powered financial analytics platform serving 35k+ companies with real-time market intelligence.",
+    tags: ["SEO", "LinkedIn Marketing", "B2B Digital"],
+    color: "#0EA5E9",
+    bg: "bg-sky-500",
+    light: "from-sky-50 to-blue-50",
+    border: "border-sky-100",
+    badge: "bg-sky-100 text-sky-700",
+    glow: "hover:shadow-sky-200/70",
+    initials: "HT",
+    featured: true,
+  },
+  {
+    name: "Highbrow Healthcare",
+    url: "https://highbrowhealthcare.com",
+    category: "Healthcare / Manufacturing",
+    description: "Third-party cosmetic manufacturer of soaps, shampoos, lotions & skincare — solar-powered facility.",
+    tags: ["Web Development", "SEO", "Branding"],
+    color: "#14B8A6",
+    bg: "bg-teal-500",
+    light: "from-teal-50 to-emerald-50",
+    border: "border-teal-100",
+    badge: "bg-teal-100 text-teal-700",
+    glow: "hover:shadow-teal-200/70",
+    initials: "HH",
+  },
+  {
+    name: "Nezal Herbocare",
+    url: "https://nezalherbocare.com",
+    category: "Herbal Skincare / D2C",
+    description: "100% natural herbal skincare brand — eco-friendly soaps, serums, shampoos and body care products.",
+    tags: ["Instagram Ads", "Facebook Ads", "E-Commerce"],
+    color: "#22C55E",
+    bg: "bg-green-500",
+    light: "from-green-50 to-emerald-50",
+    border: "border-green-100",
+    badge: "bg-green-100 text-green-700",
+    glow: "hover:shadow-green-200/70",
+    initials: "NZ",
+  },
+  {
+    name: "Lavex",
+    url: "https://lavex.in",
+    category: "B2B / Industrial",
+    description: "Industrial and commercial solutions brand — digital marketing, SEO and B2B lead generation.",
+    tags: ["Google Ads", "SEO", "B2B Marketing"],
+    color: "#F97316",
+    bg: "bg-orange-500",
+    light: "from-orange-50 to-amber-50",
+    border: "border-orange-100",
+    badge: "bg-orange-100 text-orange-700",
+    glow: "hover:shadow-orange-200/70",
+    initials: "LX",
+  },
+  {
+    name: "Usiksa",
+    url: "https://usiksa.com",
+    category: "EdTech / E-Learning",
+    description: "Online learning platform delivering skill-based education and professional development courses.",
+    tags: ["Performance Marketing", "Social Media", "Web Design"],
+    color: "#A855F7",
+    bg: "bg-purple-500",
+    light: "from-violet-50 to-purple-50",
+    border: "border-violet-100",
+    badge: "bg-violet-100 text-violet-700",
+    glow: "hover:shadow-violet-200/70",
+    initials: "US",
+  },
+  {
+    name: "ApexHide",
+    url: "https://www.apexhide.com",
+    category: "Manufacturing / Leather",
+    description: "Premium leather and hide products manufacturer — digital presence, SEO and export marketing.",
+    tags: ["Web Development", "Export SEO", "Branding"],
+    color: "#78716C",
+    bg: "bg-stone-500",
+    light: "from-stone-50 to-gray-50",
+    border: "border-stone-100",
+    badge: "bg-stone-100 text-stone-700",
+    glow: "hover:shadow-stone-200/70",
+    initials: "AH",
+  },
+  {
+    name: "Denim Fabrics Wholesale",
+    url: "https://Denimfabricswholesale.co.za",
+    category: "Fashion / Wholesale",
+    description: "South Africa's wholesale denim fabric supplier — international digital marketing and SEO.",
+    tags: ["International SEO", "E-Commerce", "Social Media"],
+    color: "#1D4ED8",
+    bg: "bg-blue-700",
+    light: "from-blue-50 to-indigo-50",
+    border: "border-blue-200",
+    badge: "bg-blue-100 text-blue-800",
+    glow: "hover:shadow-blue-200/70",
+    initials: "DF",
+  },
+  {
+    name: "TrioFit Nutracare",
+    url: "https://triofitnutracare.com",
+    category: "Health & Nutrition",
+    description: "Premium nutraceutical brand offering fitness supplements and health products across India.",
+    tags: ["Meta Ads", "Instagram Marketing", "E-Commerce SEO"],
+    color: "#DC2626",
+    bg: "bg-red-600",
+    light: "from-red-50 to-pink-50",
+    border: "border-red-100",
+    badge: "bg-red-100 text-red-700",
+    glow: "hover:shadow-red-200/70",
+    initials: "TF",
   },
 ]
 
+const categories = ["All", "Healthcare", "E-Commerce", "Finance", "Skincare", "Music", "Tech"]
+
 export default function ClientsPortfolio() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [activeFilter, setActiveFilter] = useState("All")
+  const [hovered, setHovered] = useState<string | null>(null)
+
+  const filtered = activeFilter === "All"
+    ? clients
+    : clients.filter(c =>
+        c.category.toLowerCase().includes(activeFilter.toLowerCase()) ||
+        c.tags.some(t => t.toLowerCase().includes(activeFilter.toLowerCase()))
+      )
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      {/* Background decoration */}
+    <section className="py-24 bg-gray-50 relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(to_right,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-indigo-50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-60" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-50 rounded-full blur-3xl translate-x-1/4 translate-y-1/4 pointer-events-none opacity-60" />
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-indigo-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-100/30 rounded-full blur-3xl translate-x-1/4 translate-y-1/4 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-green-50 border border-green-200 text-sm text-green-700 font-medium mb-6">
-            <TrendingUp className="w-4 h-4 mr-2" />
-            Our Client Portfolio
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-gray-200 text-sm text-gray-600 font-medium mb-5 shadow-sm">
+            <TrendingUp className="w-4 h-4 mr-2 text-green-500" />
+            Real Clients · Real Results
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-5">
             Brands We've{" "}
-            <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Grown Together</span>
+            <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Grown Together
+            </span>
           </h2>
-          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
-            From startups to established enterprises — here are some of the amazing businesses we've partnered with and helped scale digitally.
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+            From Mumbai startups to international businesses — here are the brands we've built, scaled, and continue to grow.
           </p>
         </motion.div>
 
-        {/* Stats row */}
-        <div className="grid grid-cols-3 gap-6 mb-16">
+        {/* Stats */}
+        <div className="grid grid-cols-3 gap-4 mb-12">
           {[
-            { value: "100+", label: "Global Clients", color: "text-indigo-600", bg: "bg-indigo-50", border: "border-indigo-100" },
-            { value: "25+", label: "Years Experience", color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" },
-            { value: "50+", label: "Projects Delivered", color: "text-pink-600", bg: "bg-pink-50", border: "border-pink-100" },
-          ].map((stat, i) => (
+            { value: "17+", label: "Active Clients", color: "text-indigo-600", bg: "bg-indigo-50 border-indigo-100" },
+            { value: "25+", label: "Years Experience", color: "text-purple-600", bg: "bg-purple-50 border-purple-100" },
+            { value: "8+", label: "Industries Served", color: "text-pink-600", bg: "bg-pink-50 border-pink-100" },
+          ].map((s, i) => (
             <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
+              key={s.label}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className={`${stat.bg} ${stat.border} border rounded-2xl p-6 text-center`}
+              className={`${s.bg} border rounded-2xl p-5 text-center`}
             >
-              <div className={`text-3xl font-bold ${stat.color} mb-1`}>{stat.value}</div>
-              <div className="text-gray-500 text-sm">{stat.label}</div>
+              <div className={`text-3xl font-black ${s.color}`}>{s.value}</div>
+              <div className="text-sm text-gray-500 mt-1">{s.label}</div>
             </motion.div>
           ))}
         </div>
 
-        {/* Client Grid */}
+        {/* Filter tabs */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {categories.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setActiveFilter(cat)}
+              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 border ${
+                activeFilter === cat
+                  ? "bg-indigo-600 text-white border-indigo-600 shadow-md shadow-indigo-200"
+                  : "bg-white text-gray-600 border-gray-200 hover:border-indigo-300 hover:text-indigo-600"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Client grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {clients.map((client, index) => (
-            <motion.div
+          {filtered.map((client, index) => (
+            <motion.a
               key={client.name}
-              initial={{ opacity: 0, y: 30 }}
+              href={client.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              transition={{ duration: 0.45, delay: index * 0.04 }}
               viewport={{ once: true }}
               whileHover={{ y: -6, scale: 1.02 }}
-              onHoverStart={() => setHoveredIndex(index)}
-              onHoverEnd={() => setHoveredIndex(null)}
-              className={`relative bg-gradient-to-br ${client.gradient} border ${client.border} rounded-2xl p-6 transition-all duration-300 group overflow-hidden ${client.glow}`}
+              onHoverStart={() => setHovered(client.name)}
+              onHoverEnd={() => setHovered(null)}
+              className={`relative bg-gradient-to-br ${client.light} border ${client.border} rounded-2xl p-5 transition-all duration-300 group overflow-hidden hover:shadow-xl ${client.glow} cursor-pointer block`}
             >
               {client.featured && (
-                <div className="absolute top-3 right-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
-                  <Star className="w-2.5 h-2.5" />
-                  SISTER BRAND
+                <div className="absolute top-3 right-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">
+                  ★ FEATURED
                 </div>
               )}
 
-              {/* Glow shimmer */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/60 to-transparent pointer-events-none" />
+              {/* Shimmer on hover */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/50 to-transparent pointer-events-none" />
 
               <div className="relative z-10">
-                {/* Logo / initials */}
-                <div className={`w-12 h-12 ${client.icon_bg} rounded-xl flex items-center justify-center mb-4 text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300`}>
+                {/* Logo / Initials */}
+                <div
+                  className={`w-12 h-12 ${client.bg} rounded-xl flex items-center justify-center text-white font-black text-sm mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm`}
+                >
                   {client.initials}
                 </div>
 
-                <div className={`inline-block text-xs font-medium px-2 py-1 rounded-full ${client.badge} mb-3`}>
+                {/* Category badge */}
+                <div className={`inline-block text-[10px] font-semibold px-2 py-0.5 rounded-full mb-2 ${client.badge}`}>
                   {client.category}
                 </div>
 
-                <h3 className="text-base font-bold text-gray-900 mb-2">{client.name}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed mb-4">{client.description}</p>
+                <h3 className="text-base font-bold text-gray-900 mb-1.5">{client.name}</h3>
+                <p className="text-xs text-gray-500 leading-relaxed mb-3">{client.description}</p>
 
-                <div className="flex flex-wrap gap-1.5">
-                  {client.tags.map((tag) => (
-                    <span key={tag} className="text-[10px] bg-white/60 border border-gray-200 text-gray-600 px-2 py-0.5 rounded-full">
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1">
+                  {client.tags.map(tag => (
+                    <span key={tag} className="text-[10px] bg-white/70 border border-gray-200 text-gray-600 px-2 py-0.5 rounded-full">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                {client.url !== "#" && (
-                  <a
-                    href={client.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs text-indigo-600 font-medium mt-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                  >
-                    <Globe className="w-3 h-3" />
-                    Visit Website
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                )}
+                {/* Visit link — appears on hover */}
+                <div className={`flex items-center gap-1 text-xs font-semibold mt-3 transition-all duration-200 ${hovered === client.name ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`} style={{ color: client.color }}>
+                  <Globe className="w-3 h-3" />
+                  Visit Website
+                  <ExternalLink className="w-3 h-3" />
+                </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 
@@ -299,24 +397,30 @@ export default function ClientsPortfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-16 text-center bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 border border-indigo-100 rounded-3xl p-12"
+          className="mt-16 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-3xl p-10 sm:p-14 text-center text-white"
         >
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-            Ready to Join Our Success Stories?
-          </h3>
-          <p className="text-gray-500 mb-8 max-w-xl mx-auto">
-            Let's build your brand's digital presence together. Get a free strategy call and see how we can grow your business.
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3">Ready to Be Our Next Success Story?</h3>
+          <p className="text-indigo-100 mb-8 max-w-xl mx-auto text-lg">
+            Join 17+ brands that trust ZAPWMS to grow their digital presence. Get a free strategy call today.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <AnimatedButton className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-lg">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-white text-indigo-700 font-bold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all"
+              >
                 Book a Free Strategy Call
-              </AnimatedButton>
+              </motion.button>
             </Link>
-            <Link href="/success-stories">
-              <AnimatedButton variant="slim" className="bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 shadow-sm">
-                View Success Stories
-              </AnimatedButton>
+            <Link href="/get-started">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-white/15 border border-white/30 text-white font-semibold px-8 py-3.5 rounded-xl hover:bg-white/25 transition-all"
+              >
+                Get Started
+              </motion.button>
             </Link>
           </div>
         </motion.div>
