@@ -19,6 +19,27 @@ interface StackItem {
   content: Service;
 }
 
+
+/* ================= SERVICE IMAGES ================= */
+const serviceImages: Record<string, string> = {
+  "Influencer Marketing": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80",
+  "AI Marketing": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80",
+  "AI Model Generation": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80",
+  "Motion Posters": "https://images.unsplash.com/photo-1536240478700-b869ad10e128?w=600&q=80",
+  "Anime & Animation": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&q=80",
+  "Spot Advertising": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
+  "YouTube Ads (Non-Skip)": "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=600&q=80",
+  "Brand Awareness Campaigns": "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&q=80",
+  "Product Photography": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80",
+  "Beauty Product Shoots": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80",
+  "Model Product Shoots": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+  "Brand Face Shoots": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
+  "Regional Marketing": "https://images.unsplash.com/photo-1477281765962-ef34e8bb0967?w=600&q=80",
+  "Music Video Production": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80",
+  "Audio / Video Promotion": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80",
+  "Music Revenue Generation": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&q=80",
+};
+
 /* ================= DATA with Icons ================= */
 const services: Service[] = [
   {
@@ -381,12 +402,22 @@ const ScrollStackCard = memo(({
           {item.icon || "✨"}
         </div>
 
-        {/* Content */}
-        <div className="relative">
+        {/* Content - two column layout with image */}
+        <div className="relative flex gap-6 items-start">
+          {/* Left: image */}
+          {serviceImages[item.content.title] && (
+            <div className="hidden sm:block flex-shrink-0 w-36 h-28 rounded-2xl overflow-hidden border border-gray-100">
+              <img
+                src={serviceImages[item.content.title]}
+                alt={item.content.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+          )}
+          {/* Right: text */}
+          <div className="flex-1">
           <div className="flex items-start gap-4 mb-3">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 
-                          bg-clip-text text-transparent group-hover:from-yellow-300 group-hover:to-amber-400 
-                          transition-all duration-300">
+            <h3 className="text-2xl font-bold text-gray-900 group-hover:text-indigo-700 transition-all duration-300">
               {item.title}
             </h3>
           </div>
@@ -490,16 +521,16 @@ function ServiceDrawer({
           {/* Drawer panel */}
           <motion.div
             className="relative w-full md:w-[55vw] lg:w-[48vw] xl:w-[42vw] 
-                       bg-gradient-to-b from-gray-900 to-black 
-                       border-l border-gray-100 overflow-y-auto
-                       shadow-2xl shadow-black/50"
+                       bg-white 
+                       border-l border-gray-200 overflow-y-auto
+                       shadow-2xl shadow-gray-200/80"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
           >
             {/* Decorative header gradient */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-400" />
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
             
             <div className="p-8 pt-24 pb-16">
               {/* Close button */}
@@ -507,10 +538,10 @@ function ServiceDrawer({
                 onClick={onClose}
                 className="absolute top-6 right-6 group flex items-center gap-2 
                            text-gray-500 hover:text-indigo-600 
-                           bg-white/5 hover:bg-white/10 
+                           bg-gray-50 hover:bg-indigo-50 
                            border border-gray-200 rounded-xl px-4 py-2 
                            transition-all duration-200
-                           focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
+                           focus:outline-none focus:ring-2 focus:ring-indigo-400/50"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 aria-label="Close details panel"
@@ -521,13 +552,25 @@ function ServiceDrawer({
                 <span className="text-sm font-medium">Close</span>
               </motion.button>
 
+              {/* Service image banner */}
+              {serviceImages[service.title] && (
+                <div className="relative h-44 rounded-2xl overflow-hidden mb-6 border border-gray-100">
+                  <img
+                    src={serviceImages[service.title]}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                </div>
+              )}
+
               {/* Service Icon & Title */}
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-400 to-amber-500 
-                                flex items-center justify-center text-2xl shadow-lg shadow-yellow-500/30">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 
+                                flex items-center justify-center text-2xl shadow-lg shadow-indigo-500/30">
                   {service.icon || "✨"}
                 </div>
-                <h2 id="drawer-title" className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                <h2 id="drawer-title" className="text-3xl md:text-4xl font-bold text-gray-900">
                   {service.title}
                 </h2>
               </div>
@@ -536,20 +579,18 @@ function ServiceDrawer({
 
               {/* Best For Badge */}
               <motion.div 
-                className="mb-10 p-5 border border-yellow-400/30 rounded-2xl 
-                           bg-gradient-to-r from-yellow-400/10 to-amber-500/5
-                           backdrop-blur-sm"
+                className="mb-10 p-5 border border-indigo-200 rounded-2xl bg-indigo-50"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-yellow-400">🎯</span>
-                  <h3 className="text-sm font-semibold text-yellow-300 uppercase tracking-wider">
+                  <span>🎯</span>
+                  <h3 className="text-sm font-semibold text-indigo-700 uppercase tracking-wider">
                     Best For
                   </h3>
                 </div>
-                <p className="text-yellow-100/90 font-medium">{service.best}</p>
+                <p className="text-indigo-800 font-medium">{service.best}</p>
               </motion.div>
 
               {/* What's Included */}
@@ -559,8 +600,8 @@ function ServiceDrawer({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 }}
               >
-                <h3 className="text-xl font-bold mb-5 flex items-center gap-2">
-                  <span className="w-1.5 h-6 bg-yellow-400 rounded-full" />
+                <h3 className="text-xl font-bold text-gray-900 mb-5 flex items-center gap-2">
+                  <span className="w-1.5 h-6 bg-indigo-500 rounded-full" />
                   What's Included
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -576,7 +617,7 @@ function ServiceDrawer({
                       whileHover={{ x: 4 }}
                     >
                       <div className="flex items-start gap-3">
-                        <span className="text-yellow-400 mt-0.5">•</span>
+                        <span className="text-indigo-500 mt-0.5">•</span>
                         <span className="text-sm text-gray-600 group-hover:text-gray-900 transition-colors">
                           {detail}
                         </span>
@@ -593,8 +634,8 @@ function ServiceDrawer({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25 }}
               >
-                <h3 className="text-xl font-bold mb-5 flex items-center gap-2">
-                  <span className="w-1.5 h-6 bg-yellow-400 rounded-full" />
+                <h3 className="text-xl font-bold text-gray-900 mb-5 flex items-center gap-2">
+                  <span className="w-1.5 h-6 bg-purple-500 rounded-full" />
                   What You Get
                 </h3>
                 <div className="grid grid-cols-3 gap-3">

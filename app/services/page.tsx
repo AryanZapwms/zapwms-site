@@ -1,29 +1,20 @@
-"use client"
+import AnimatedBackground from "@/components/animated-background";
+import Navbar from "@/components/navbar";
+import AnimatedFooter from "@/components/animated-footer";
+import ServicesVisual from "@/components/services-visual";
+import ServicesAlternating from "@/components/services-alternating";
 
-import { useEffect } from "react"
-import BackgroundStripes from "@/components/background-stripes"
-import AnimatedBackground from "@/components/animated-background"
-import Navbar from "@/components/navbar"
-import AnimatedFooter from "@/components/animated-footer"
-import ServicesPage from "@/components/services-page"
-import BackgroundPaths from "@/components/background-paths"
-
-export default function Services() {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
+export default function ServicesPage() {
   return (
     <div className="relative min-h-screen bg-white">
-      <BackgroundPaths />
       <AnimatedBackground />
-      <BackgroundStripes />
-
       <div className="relative z-10">
         <Navbar />
-        <ServicesPage />
+        <div className="pt-24" />
+        <ServicesVisual />
+        <ServicesAlternating />
         <AnimatedFooter />
       </div>
     </div>
-  )
+  );
 }
