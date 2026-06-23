@@ -405,11 +405,11 @@ const ScrollStackCard = memo(({
         {/* Content - two column layout with image */}
         <div className="relative flex gap-6 items-start">
           {/* Left: image */}
-          {serviceImages[item.content.title] && (
+          {serviceImages[item.title] && (
             <div className="hidden sm:block flex-shrink-0 w-36 h-28 rounded-2xl overflow-hidden border border-gray-100">
               <img
-                src={serviceImages[item.content.title]}
-                alt={item.content.title}
+                src={serviceImages[item.title]}
+                alt={item.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
             </div>
@@ -433,7 +433,8 @@ const ScrollStackCard = memo(({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </div>
-        </div>
+          </div>{/* end flex-1 */}
+        </div>{/* end two-col */}
 
         {/* Subtle border gradient */}
         <div className="absolute inset-0 rounded-3xl p-[1px] pointer-events-none">
